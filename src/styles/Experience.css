@@ -1,0 +1,25 @@
+#experience .nav-tabs {
+  border: 0;
+}
+
+#experience .nav-tabs .nav-link {
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
+  border-radius: 0px;
+  color: var(--slate);
+  background-color: transparent;
+  border: 0;
+  transition: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border-left: 2px solid var(--light-navy);
+}
+
+#experience .nav-tabs .nav-link:hover {
+  cursor: pointer;
+  background-color: var(--light-navy);
+}
+
+#experience .nav-tabs .nav-item.show .nav-link,
+#experience .nav-tabs .nav-link.active {
+  color: var(--green);
+  border-left: 2px solid var(--green);
+}

@@ -1,0 +1,25 @@
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--green);
+}
+
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus {
+  color: var(--green);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
+  margin: 0px 10px;
+  color: var(--lightest-slate);
+}
+
+.navbar-light .navbar-nav .nav-link span {
+  margin-right: 4px;
+}
+
+.navbar-light .navbar-nav .nav-link span,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: var(--green);
+}

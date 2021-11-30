@@ -1,0 +1,18 @@
+#about .about-text {
+  font-size: 19px;
+}
+
+#about .skills p {
+  font-family: "Fira Code", monospace;
+}
+
+#about .skills p span {
+  border: 1px solid #233554;
+  padding: 6px 10px;
+  border-radius: 2px;
+  line-height: 1;
+  font-size: 13px;
+  margin: 6px;
+  display: inline-block;
+  background-color: #233554;
+}

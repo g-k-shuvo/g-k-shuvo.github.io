@@ -1,0 +1,26 @@
+.banner-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.banner-text .banner-subtitle {
+  font-family: "Fira Code", monospace;
+  font-size: clamp(14px, 5vw, 16px);
+  font-weight: 400;
+}
+
+.banner-text .banner-heading {
+  font-size: clamp(40px, 8vw, 80px);
+  font-weight: 600;
+  margin: 0;
+}
+
+.banner-text p {
+  margin: 20px 0px 0px;
+  max-width: 540px;
+}
+
+.banner-text a {
+  margin-top: 50px;
+}
