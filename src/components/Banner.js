@@ -16,11 +16,16 @@ export default function Banner() {
             <p className="slate">
               Hard-working <span className="green">web developer</span> with a
               flair for creating elegant solutions in the least amount of
-              time.Passionate about{" "}
-              <span className="green">problem-solving</span> and modern web
+              time.Passionate about
+              <span className="green"> problem-solving</span> and modern web
               development technologies.
             </p>
-            <a href="#sdfsdf" className="greenBtn">
+            <a
+              href="https://drive.google.com/file/d/1jLl_eezKnPdmLkZ1Bk_EDB8gSDYEiWIi/view?usp=sharing"
+              target="_blank"
+              className="greenBtn"
+              rel="noreferrer"
+            >
               My Resume
             </a>
           </div>

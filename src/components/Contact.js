@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import SectionHeading from "./SectionHeading";
+import "../styles/Contact.css";
 
 export default function Contact() {
   return (
@@ -14,7 +15,7 @@ export default function Contact() {
             have a question or just want to say hi, I’ll try my best to get back
             to you!
           </p>
-          <a href="#sdfsd" className="greenBtn">
+          <a href="mailto:gkshuvo24@gmail.com" className="greenBtn">
             Say Hello
           </a>
         </div>

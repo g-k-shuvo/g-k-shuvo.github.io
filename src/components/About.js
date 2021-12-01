@@ -23,7 +23,7 @@ export default function About() {
             <p className="about-text slate">
               Here are a few technologies I’ve been working with recently:
             </p>
-            <div class="skills">
+            <div className="skills">
               <p className="slate">
                 <span>HTML5</span>
                 <span>CSS3</span>
