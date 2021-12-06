@@ -46,7 +46,7 @@ export default function About() {
             </div>
           </Col>
           <Col md={3}>
-            <img src={aboutImage} className="img-fluid" alt="" />
+            <img src={aboutImage} className="img-fluid about-image" alt="" />
           </Col>
         </Row>
       </Container>

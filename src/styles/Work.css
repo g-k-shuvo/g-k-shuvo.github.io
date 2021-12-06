@@ -33,3 +33,12 @@
 #work .project-links a:hover {
   color: #64ffda;
 }
+
+#work .project-image {
+  cursor: pointer;
+  mix-blend-mode: luminosity;
+}
+
+#work .project-image:hover {
+  mix-blend-mode: normal;
+}

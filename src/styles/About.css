@@ -16,3 +16,12 @@
   display: inline-block;
   background-color: #233554;
 }
+
+#about .about-image {
+  cursor: pointer;
+  mix-blend-mode: luminosity;
+}
+
+#about .about-image:hover {
+  mix-blend-mode: normal;
+}

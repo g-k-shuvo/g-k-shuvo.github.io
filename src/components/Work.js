@@ -6,6 +6,7 @@ import { FiGithub, FiGlobe } from "react-icons/fi";
 import project1 from "../images/project1.png";
 import project2 from "../images/project2.png";
 import project3 from "../images/project3.png";
+import project4 from "../images/project4.png";
 
 export default function Work() {
   return (
@@ -14,7 +15,7 @@ export default function Work() {
       <Container>
         <Row className="gy-5 py-5">
           <Col lg={7}>
-            <img src={project1} className="img-fluid" alt="" />
+            <img src={project1} className="img-fluid project-image" alt="" />
           </Col>
           <Col lg={5}>
             <div className="text-lg-end">
@@ -103,12 +104,12 @@ export default function Work() {
             lg={7}
             className="order-lg-2 order-md-1 order-sm-1 order-xs-1 order-1"
           >
-            <img src={project2} className="img-fluid" alt="" />
+            <img src={project2} className="img-fluid project-image" alt="" />
           </Col>
         </Row>
         <Row className="gy-5 py-5">
           <Col lg={7}>
-            <img src={project3} className="img-fluid" alt="" />
+            <img src={project3} className="img-fluid project-image" alt="" />
           </Col>
           <Col lg={5}>
             <div className="text-lg-end">
@@ -198,7 +199,7 @@ export default function Work() {
             lg={7}
             className="order-lg-2 order-md-1 order-sm-1 order-xs-1 order-1"
           >
-            <img src={project1} className="img-fluid" alt="" />
+            <img src={project4} className="img-fluid project-image" alt="" />
           </Col>
         </Row>
         <Row>
