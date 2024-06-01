@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --background-color: #ffffff;
+  --foreground-color: #000000;
+  --secondary-color: #e1e1e1;
+  --text-fira-code: "Fira Code", monospace;
+  --text-space-mono: "Space Mono", monospace;
+}
+
+[data-theme="dark"] {
+  --background-color: #000000;
+  --foreground-color: #ffffff;
+  --secondary-color: #1e1e1e;
+}
+
+body {
+  color: var(--foreground-color);
+  background: var(--background-color);
+  font-family: var(--text-fira-code);
+}
+
+.container {
+  max-width: 1200px;
+  min-width: 1200px;
+  margin: 0px auto;
+}
+
+@media screen and (max-width: 1350px) {
+  .container {
+    max-width: 1000px;
+    min-width: 1000px;
+  }
+}
+
+@media (max-width: 1075px) {
+  .container {
+    max-width: -webkit-fill-available;
+    min-width: -webkit-fill-available;
+    max-width: -moz-available;
+    min-width: -moz-available;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
