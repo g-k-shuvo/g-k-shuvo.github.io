@@ -26,6 +26,7 @@ const Home: React.FC<HomeProps> = ({ homeData }) => {
             width={300}
             height={300}
             blurDataURL={homeData.imageUrl}
+            className='rounded'
           />
         </div>
       </div>
