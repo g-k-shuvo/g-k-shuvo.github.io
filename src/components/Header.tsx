@@ -72,7 +72,7 @@ const Header: React.FC = () => {
       <nav className='w-9/10 lg:w-[1024px] mx-auto flex flex-col sm:flex-row justify-between items-center'>
         <div className='w-full sm:w-auto flex justify-between items-center'>
           <Link
-            href='#home'
+            href='/'
             className='inline-block px-3 py-2 sm:px-4 sm:py-3 cursor-pointer hover:bg-secondaryColor'
           >
             gk
