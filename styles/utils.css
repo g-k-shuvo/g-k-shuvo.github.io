@@ -1,0 +1,67 @@
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.skill {
+  background-color: rgba(var(--foreground-color-rgb), 0.1);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.skills:hover > .skill::after {
+  opacity: 1;
+}
+
+.skill:hover::before {
+  opacity: 1;
+}
+
+.skill::before,
+.skill::after {
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  transition: opacity 500ms;
+  width: 100%;
+}
+
+.skill::before {
+  background: radial-gradient(
+    500px circle at var(--mouse-x) var(--mouse-y),
+    rgba(var(--foreground-color-rgb), 0.06),
+    /* Adjusted for opacity */ transparent 50%
+  );
+  z-index: 3;
+}
+
+.skill::after {
+  background: radial-gradient(
+    250px circle at var(--mouse-x) var(--mouse-y),
+    rgba(var(--foreground-color-rgb), 0.4),
+    /* Adjusted for opacity */ transparent 50%
+  );
+  z-index: 1;
+}
+
+.skill > .skill-content {
+  background-color: var(--secondary-color);
+  inset: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  z-index: 2;
+}

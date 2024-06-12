@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         secondaryColor: "var(--secondary-color)",
+        foregroundColor: "var(--foreground-color)",
       },
       spacing: {
         "1/10": "10%",
