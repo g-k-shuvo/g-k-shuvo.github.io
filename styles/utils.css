@@ -16,6 +16,21 @@
   cursor: pointer;
 }
 
+/* Responsive styles for skill class */
+@media (max-width: 768px) and (min-width: 421px) {
+  .skill {
+    width: 150px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 420px) {
+  .skill {
+    width: 120px;
+    height: 40px;
+  }
+}
+
 .skills:hover > .skill::after {
   opacity: 1;
 }
