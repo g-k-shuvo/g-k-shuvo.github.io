@@ -1,40 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# <img src="banner.jpg" align="center" alt="banner"/>
 
-## Getting Started
+Source code for my personal portfolio, musabhassan.com
 
-First, run the development server:
+[![Visit Live Site](https://img.shields.io/badge/Visit%20Live%20Site-222224?style=for-the-badge)](https://musabhassan.com)
+
+### Source Information
+
+This website is built with
+
+- [SvelteKit (Frontend Framework)](https://kit.svelte.dev/)
+- [Slickscroll (Scroll Effects)](https://github.com/Musab-Hassan/slickscrolljs)
+- [Anime (Animations)](https://github.com/juliangarnier/anime)
+- [Three.js (3D Effects)](https://github.com/mrdoob/three.js/)
+- [Firebase (Hosting)](https://firebase.google.com/docs/hosting)
+
+This is the source for version 2+. Version 1.0, the one built with jQuery is in the [v1 branch](https://github.com/Musab-Hassan/musabhassan.com/tree/v1).
+
+### Developing
+
+The site is just a regular SvelteKit project, with ssr disabled.
+
+For development, start the vite development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+*Note: Due to migration from Rollup, HMR breaks the site. You have to do a full reload if you modify any components or TS files.*
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+For production, build the site:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+npm run build
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Contributing
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+You can fork this repo and modify it however I wont really be accepting pull requests due to the nature of the website being based on "taste" and a showcase of my work.
 
-## Learn More
+If you decide to use this site for your own commercial work, replace my personal logos with yours.
 
-To learn more about Next.js, take a look at the following resources:
+Please don't use my personal logos as yours.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Mozilla Public License 2.0 License.
