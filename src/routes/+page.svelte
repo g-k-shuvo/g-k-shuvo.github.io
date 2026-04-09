@@ -11,6 +11,7 @@
 	import Footer from "$lib/components/footer.svelte";
 	import CursorDot from "$lib/components/cursor-dot.svelte"
 	import Loader from "$lib/components/loader.svelte";
+	import ExperienceSection from "$lib/sections/experience.svelte";
     import { dataState, viewPortState } from "$lib/state.svelte";
 
 	let scrollContainer: HTMLElement = $state()!;
@@ -23,7 +24,8 @@
 		scrollContainer.scrollTo(0, 0);
 		
 		dataState.workData = await fetchJsonData("/data/work-data.json"); // Wait for work data to load
-		dataState.siteData = await fetchJsonData("/data/data.json"); // Wait for work data to load
+		dataState.siteData = await fetchJsonData("/data/data.json"); // Wait for site data to load
+		dataState.experienceData = await fetchJsonData("/data/experience-data.json"); // Wait for experience data to load
 
 		await Promise.allSettled($imgPromises); // Wait for images to load
 		await loaderAnimationPromise; // Wait until loading animation is complete
@@ -64,8 +66,9 @@
 	</div>
 	<!-- page sections -->
 	<HomeSection></HomeSection>
-	<WorkSection></WorkSection>
 	<AboutSection></AboutSection>
+	<WorkSection></WorkSection>
+	<ExperienceSection></ExperienceSection>
 	<Footer></Footer>
 </div>
 

@@ -84,26 +84,28 @@
 							</button>
 						</li>
 						<li use:introAnimation={{ delay: 1100 }}>
-							<button 
+							<button
 								class="interactive clickable"
-								onclick={() => navigate(scrollAnchorState.work!)} 
+								onclick={() => navigate(scrollAnchorState.about!)}
 								in:mobileTransitionSwitcher={{ delay: 250 }}>
-								<p>Work</p>
-							</button>
-						</li>
-						<li use:introAnimation={{ delay: 1200 }}>
-							<button 
-								class="interactive clickable"
-								onclick={() => navigate(scrollAnchorState.about!)} 
-								in:mobileTransitionSwitcher={{ delay: 300 }}>
 								About
 							</button>
 						</li>
-						<li class="mobile">
-							<a href="mailto:musab@musabhassan.com" target="_blank" in:mobileTransitionSwitcher={{ delay: 350 }}>Contact</a>
+						<li use:introAnimation={{ delay: 1200 }}>
+							<button
+								class="interactive clickable"
+								onclick={() => navigate(scrollAnchorState.work!)}
+								in:mobileTransitionSwitcher={{ delay: 300 }}>
+								<p>Work</p>
+							</button>
 						</li>
 						<li use:introAnimation={{ delay: 1300 }}>
-							<a href="https://github.com/Musab-Hassan" target="_blank" in:mobileTransitionSwitcher={{ delay: 400 }}>Github</a>
+							<button
+								class="interactive clickable"
+								onclick={() => navigate(scrollAnchorState.experience!)}
+								in:mobileTransitionSwitcher={{ delay: 350 }}>
+								Experience
+							</button>
 						</li>
 					{/key}
 				</ul>

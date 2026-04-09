@@ -1,91 +1,111 @@
 [
     {
-        "id": "marymount",
-        "title": "Marymount Paris",
+        "id": "docmind",
+        "title": "DocMind",
         "details": {
-            "description": "An enterprise grade dyanamic full stack application with a content management system for the Marymount International School, Paris.",
-            "summary": "Web Application"
+            "description": "Production-grade RAG system with multi-agent orchestration, hybrid retrieval, and validation pipeline. Features DAG-based query planning with parallel async execution, semantic enrichment ingestion pipeline, and evaluation framework with retrieval metrics and adversarial testing.",
+            "summary": "AI / RAG System"
         },
         "roles": [
-            "UI/UX Designer",
+            "Full-Stack Developer",
+            "ML Engineer"
+        ],
+        "links": [
+            {
+                "type": "web",
+                "text": "View on GitHub",
+                "link": "https://github.com/g-k-shuvo/doc-mind"
+            }
+        ]
+    },
+    {
+        "id": "flairy",
+        "title": "Flairy",
+        "details": {
+            "description": "Full-stack multi-vendor e-commerce marketplace built with MERN stack and Redux. Features checkout system with Stripe payments and order lifecycle management, admin dashboard, search, pagination, and review system.",
+            "summary": "E-Commerce Platform"
+        },
+        "roles": [
             "Full-Stack Developer"
         ],
         "links": [
             {
                 "type": "web",
-                "text": "Visit Site",
-                "link": "https://marymount.fr"
+                "text": "View on GitHub",
+                "link": "https://github.com/g-k-shuvo/flairy"
             }
         ]
     },
     {
-        "id": "lcml",
-        "title": "Life-Cycle Managment Laboratory",
+        "id": "artifynow",
+        "title": "ArtifyNow",
         "details": {
-            "description": "A single page web application for managing research and administrative content for LCML at the University of British Columbia",
-            "summary": "Web Application"
+            "description": "AI-powered image SaaS platform with restoration, generative fill, object removal, and background removal. Implements credit-based monetization with Stripe integration and Cloudinary for scalable media handling.",
+            "summary": "AI Image SaaS"
         },
         "roles": [
-            "UI/UX Designer",
-            "Full-Stack Web Developer"
-        ]
-    },
-    {
-        "id": "v1",
-        "title": "Portfolio v1",
-        "details": {
-            "description": "My personal portfolio website with a full showcase of previous featured projects. Received the Awwwards Honorable Mention.",
-            "summary": "Personal Portfolio"
-        },
-        "date": "May 2021",
-        "roles": [
-            "UI/UX Designer",
-            "Front-end Web Developer"
-        ],
-        "links": [
-            {
-                "type": "web",
-                "text": "Visit Site",
-                "link": "https://v1.musabhassan.com"
-            }
-        ]
-    },
-    {
-        "id": "kic",
-        "title": "Kelowna Islamic Center",
-        "details": {
-            "description": "A multi-platform community platform consisting of mobile apps, a web app, and server-side solutions for Kelowna Islamic Center.",
-            "summary": "Multi-platform Solutions"
-        },
-        "roles": [
-            "UI/UX Designer",
-            "Mobile Developer",
             "Full-Stack Developer"
         ],
         "links": [
             {
-                "type": "android",
-                "text": "View on Google Play",
-                "link": "https://play.google.com/store/apps/details?id=com.kelownamasjid.android.app"
-            },
-            {
-                "type": "ios",
-                "text": "View on App Store",
-                "link": "https://apps.apple.com/us/app/kelowna-islamic-center/id1479503537?ls=1"
+                "type": "web",
+                "text": "View on GitHub",
+                "link": "https://github.com/g-k-shuvo/artifynow"
             }
         ]
     },
     {
-        "id": "grillzzy",
-        "title": "Grillzzy Foods",
+        "id": "youtube-offer-finder",
+        "title": "YouTube Offer Finder",
         "details": {
-            "description": "Iconography, branding, and website for a Canadian meat and manufacturing processing start-up",
-            "summary": "Brand Website"
+            "description": "AI-powered browser extension that extracts and analyzes video transcripts using yt-dlp and LLM processing. Features FastAPI backend for content analysis and offer detection.",
+            "summary": "AI Browser Extension"
         },
         "roles": [
-            "Brand Designer",
-            "Web Designer",
-            "Front-End Web Developer"
+            "Full-Stack Developer"
+        ],
+        "links": [
+            {
+                "type": "web",
+                "text": "View on GitHub",
+                "link": "https://github.com/g-k-shuvo/youtube-offer-detector"
+            }
+        ]
+    },
+    {
+        "id": "bloggify",
+        "title": "Bloggify",
+        "details": {
+            "description": "Multi-author blogging platform built with Django featuring role-based publishing workflows, rich text editing with CKEditor, and content management with Cloudinary media handling.",
+            "summary": "Blogging Platform"
+        },
+        "roles": [
+            "Full-Stack Developer"
+        ],
+        "links": [
+            {
+                "type": "web",
+                "text": "View on GitHub",
+                "link": "https://github.com/g-k-shuvo/bloggify-django"
+            }
+        ]
+    },
+    {
+        "id": "react-video-corner",
+        "title": "React Video Corner",
+        "details": {
+            "description": "Modular React-based video platform with reusable components and optimized UI rendering. Published as an npm package for easy integration into React projects.",
+            "summary": "NPM Package"
+        },
+        "roles": [
+            "Lead Developer"
+        ],
+        "links": [
+            {
+                "type": "web",
+                "text": "View on GitHub",
+                "link": "https://github.com/g-k-shuvo/react-video-corner"
+            }
         ]
     }
 ]

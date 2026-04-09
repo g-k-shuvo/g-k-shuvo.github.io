@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(rm .firebaserc firebase.json banner.jpg .github/workflows/deploy.yml)",
+      "Bash(rmdir .github/workflows)",
+      "Bash(rmdir .github)",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(mkdir -p static/assets/imgs/work-back/__TRACKED_VAR__)",
+      "Bash(cp static/assets/imgs/work-back/marymount/cover.jpg static/assets/imgs/work-back/__TRACKED_VAR__/cover.jpg)",
+      "Bash(rm:*)",
+      "Bash(cp C:/Users/KIBRIA/Downloads/iloveimg-compressed/docmind.jpg D:/Personal_Projects/g-k-shuvo.github.io/static/assets/imgs/work-back/docmind/cover.jpg)",
+      "Bash(cp C:/Users/KIBRIA/Downloads/iloveimg-compressed/flairy.png D:/Personal_Projects/g-k-shuvo.github.io/static/assets/imgs/work-back/flairy/cover.jpg)",
+      "Bash(cp C:/Users/KIBRIA/Downloads/iloveimg-compressed/artify.png D:/Personal_Projects/g-k-shuvo.github.io/static/assets/imgs/work-back/artifynow/cover.jpg)",
+      "Bash(cp C:/Users/KIBRIA/Downloads/iloveimg-compressed/youtube-offer-finder.png D:/Personal_Projects/g-k-shuvo.github.io/static/assets/imgs/work-back/youtube-offer-finder/cover.jpg)",
+      "Bash(cp C:/Users/KIBRIA/Downloads/iloveimg-compressed/bloggify.png D:/Personal_Projects/g-k-shuvo.github.io/static/assets/imgs/work-back/bloggify/cover.jpg)"
+    ]
+  }
+}

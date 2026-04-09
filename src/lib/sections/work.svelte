@@ -272,7 +272,7 @@
 						</div>
 						<div in:maskSlideIn={{ reverse: true }} out:maskSlideOut>
 							<div class="links">
-								{#each dataState.workData![currentActive].links as link}
+								{#each (dataState.workData![currentActive].links ?? []) as link}
 									<a href={link.link} target="_blank" class="button">{link.text}</a>
 								{/each}
 							</div>
@@ -417,7 +417,7 @@
 					flex-basis: 0
 
 				p
-					font-size: 1.3vh
+					font-size: 1.8vh
 					width: 65%
 
 				.roles 

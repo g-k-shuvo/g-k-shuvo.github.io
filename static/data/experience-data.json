@@ -1,0 +1,63 @@
+{
+    "company": "Techjays",
+    "role": "Software Engineer",
+    "duration": "May 2023 – Present",
+    "location": "Menlo Park, CA",
+    "workMode": "Remote",
+    "projects": [
+        {
+            "id": "ai-inventory-management",
+            "title": "AI Inventory Management Platform",
+            "type": "Web App",
+            "description": "End-to-end AI-driven inventory management platform for a US-based distributor managing 1,200+ SKUs across multiple warehouses. Architected microservices backend with multi-tenancy, Azure AD SSO, real-time dashboards, ERP data ingestion processing 96K+ records, and ML-based demand forecasting with automated reorder recommendations.",
+            "techStack": ["Django", "React", "PostgreSQL", "GCP", "Azure AD", "Data Pipelines", "ML"]
+        },
+        {
+            "id": "enterprise-cx-marketplace",
+            "title": "Enterprise CX Marketplace",
+            "type": "Web App",
+            "description": "Enterprise platform for vendor discovery, RFP lifecycle, and procurement automation. Replaced third-party Prokuria with a fully in-house white-label solution, reducing dependency, cost, and latency. Owned end-to-end delivery across frontend, backend, and AWS infrastructure including testing, DevOps, and release cycles.",
+            "techStack": ["Vue", "AWS Lambda", "Cognito", "S3", "EC2", "Amplify", "Docker", "PostgreSQL"]
+        },
+        {
+            "id": "environmental-tech",
+            "title": "Environmental Tech Portal",
+            "type": "Web App",
+            "description": "Secure web portal for industrial wastewater treatment systems, supporting decentralized treatment plants and bioreactor monitoring. Built dashboards for real-time sensor telemetry, hydraulic flow, voltage signals, and BOD analysis with access control and compliance-aware data handling.",
+            "techStack": ["React", "Chart.js", "MUI", "Redux", "AWS", "Django", "Snowflake", "PostgreSQL"]
+        },
+        {
+            "id": "safety-compliance",
+            "title": "Safety & Compliance Management System",
+            "type": "Cross-Platform",
+            "description": "End-to-end safety and compliance solutions with offline-first architecture using AWS Datastore, DynamoDB, and GraphQL for field operations. Enhanced inspection workflows, streamlined incident reporting, enforced role-based access controls, and built analytics dashboards for compliance metrics and operational efficiency.",
+            "techStack": ["React", "React Native", "GraphQL", "DynamoDB", "AWS Amplify"]
+        },
+        {
+            "id": "data-center-monitoring",
+            "title": "AI-Ready Data Center Monitoring Portal",
+            "type": "Web App",
+            "description": "Real-time monitoring portal for AI-focused, waterless-cooled data centers supporting next-gen compute infrastructure. Built dashboards for system telemetry, thermal efficiency, and operational performance with custom visualizations for infrastructure metrics, energy efficiency, cooling performance, and hardware utilization.",
+            "techStack": ["React", ".NET", "Azure", "AntD Charts", "Data Visualization"]
+        },
+        {
+            "id": "accessibility-learning",
+            "title": "Accessibility Learning Platform",
+            "type": "Web App",
+            "description": "Full-stack platform for assistive learning and digital math expression for students with dysgraphia and motor impairments. Developed interactive math-input interfaces and accessibility-focused UI components, deployed with Jenkins, AWS, and NGINX for scalable delivery.",
+            "techStack": ["Angular", "Node.js", "AWS", "Jenkins", "NGINX"]
+        },
+        {
+            "id": "healthcare-analytics",
+            "title": "Healthcare Analytics & Provider Platform",
+            "type": "Web App",
+            "description": "Provider-facing platform with multi-role access and organization management. Integrated wearable data from Garmin and Fitbit for heart rate, sleep, stress, and activity monitoring. Built dashboards for patient monitoring, cohort analysis, population health, and ML-based nutrition insights.",
+            "techStack": ["React", "REST APIs", "Django", "PostgreSQL", "Docker", "ML", "GCP"]
+        }
+    ],
+    "highlight": {
+        "title": "AI/ML Feature Integration",
+        "description": "Designed and implemented AI-powered features across multiple products including RAG pipelines, vector databases, embedding pipelines, and knowledge retrieval systems.",
+        "techStack": ["RAG", "Vector DBs", "Embedding Pipelines", "LLM Integration"]
+    }
+}

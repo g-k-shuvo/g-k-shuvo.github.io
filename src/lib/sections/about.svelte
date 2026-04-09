@@ -50,19 +50,23 @@
 	{#await sectionOnePromise then _}
 		<div class="content-wrapper">
 			<h1 class="title" use:titleIn>
-				Hey I'm <br>Musab
+				Hey I'm <br>Kibria
 			</h1>
 			<div in:maskSlideIn={{ duration: 1200, reverse: true, delay: 150 }}>
 				<p class="paragraph">
-					I'm a web developer from British Columbia, Canada. I specialize in designing and developing web experiences<br><br>I work with organizations and individuals to create beautiful, responsive, and scalable web products tailor-made for them. Think we can make something great together? Let's talk over email.
-				</p>
+					I’m a software engineer based in Bangladesh, building fast, scalable, and intelligent web applications.<br><br>I turn ideas into production-ready systems—focusing on performance, clean architecture, and AI-powered functionality that actually delivers value.
+					If you're building something that needs to work reliably at scale, not just look good in a demo, let’s talk.
+					</p>
 			</div>
 			<div class="social-button-wrapper">
 				<div in:maskSlideIn={{ delay: 400, reverse: true }}>
-					<span class="button"><a href="mailto:musab@musabhassan.com" target="_blank" class="clickable sublink link">Email Me</a></span>
+					<span class="button"><a href="mailto:gkshuvo24@gmail.com" target="_blank" class="clickable sublink link">Email Me</a></span>
 				</div>
 				<div in:maskSlideIn={{ delay: 700, reverse: true }}>
-					<span class="button"><a href="https://github.com/Musab-Hassan" target="_blank" class="clickable sublink link">Github</a></span>
+					<span class="button"><a href="https://github.com/g-k-shuvo" target="_blank" class="clickable sublink link">Github</a></span>
+				</div>
+				<div in:maskSlideIn={{ delay: 700, reverse: true }}>
+					<span class="button"><a href="https://www.linkedin.com/in/g-k-shuvo/" target="_blank" class="clickable sublink link">LinkedIn</a></span>
 				</div>
 			</div>
 		</div>
@@ -75,7 +79,7 @@
 						{ property: "width", value: "100%"},
 						{ property: "height", value: "100%"}
 					]
-				}} alt="Musab's Profile" class="profile-pic">
+				}} alt="Golam Kibria's Profile" class="profile-pic">
 			{/await}
 		</div>
 	{/await}
@@ -96,8 +100,9 @@
 				<div 
 					class="flex-item" 
 					in:maskSlideIn={{ delay: 600 }}>
-					<img src="assets/imgs/svg-icons/svelte.svg" alt="Svelte">
 					<img src="assets/imgs/svg-icons/react.svg" alt="React">
+					<img src="assets/imgs/svg-icons/vue.svg" alt="Vue">
+					<img src="assets/imgs/svg-icons/tailwind-css.svg" alt="Tailwind CSS">
 				</div>
 			</li>
 			<li>
@@ -105,39 +110,57 @@
 					Back-end
 				</div>
 				<div class="flex-item" in:maskSlideIn={{ delay: 700 }}>
-					<img src="assets/imgs/svg-icons/nodejs.svg" alt="node js">
-					<img src="assets/imgs/svg-icons/php.svg" alt="php">
+					<img src="assets/imgs/svg-icons/nodejs.svg" alt="Node JS">
+					<img src="assets/imgs/svg-icons/python.svg" alt="Python">
+					<img src="assets/imgs/svg-icons/django.svg" alt="Django">
+					<img src="assets/imgs/svg-icons/graphql.svg" alt="GraphQL">
 				</div>
 			</li>
 			<li>
 				<div in:letterSlideIn={{ initDelay: 750 }}>
-					Dev-ops
+					Database
 				</div>
-				<div class="flex-item" in:maskSlideIn={{ delay: 800 }}>
-					<img src="assets/imgs/svg-icons/firebase.svg" alt="Firebase">
-					<img src="assets/imgs/svg-icons/gcp.svg" alt="Google Cloud Platform">
+				<div class="flex-item" in:maskSlideIn={{ delay: 700 }}>
+					<img src="assets/imgs/svg-icons/postgresql.svg" alt="PostgreSQL">
+					<img src="assets/imgs/svg-icons/mongodb.svg" alt="MongoDB">
+					<img src="assets/imgs/svg-icons/redis.svg" alt="Redis">
 				</div>
 			</li>
 			<li>
 				<div in:letterSlideIn={{ initDelay: 850 }}>
-					Mobile
+					Dev-ops
+				</div>
+				<div class="flex-item" in:maskSlideIn={{ delay: 800 }}>
+					<img src="assets/imgs/svg-icons/aws.svg" alt="Amazon Web Services">
+					<img src="assets/imgs/svg-icons/gcp.svg" alt="Google Cloud Platform">
+					<img src="assets/imgs/svg-icons/firebase.svg" alt="Firebase">
+					<img src="assets/imgs/svg-icons/docker.svg" alt="Docker">
+				</div>
+			</li>
+			<li>
+				<div in:letterSlideIn={{ initDelay: 950 }}>
+					AI
 				</div>
 				<div class="flex-item" in:maskSlideIn={{ delay: 900 }}>
-					<img src="assets/imgs/svg-icons/flutter.svg" alt="flutter">
-					<img src="assets/imgs/svg-icons/android.svg" alt="native android">
-					<img src="assets/imgs/svg-icons/iOS.svg" alt="native ios">
+					<img src="assets/imgs/svg-icons/openai.svg" alt="OpenAI">
+					<img src="assets/imgs/svg-icons/lang-chain.svg" alt="Langchain">
 				</div>
 			</li>
 		</ul>
 		<ul class="list">
 			<li class="list-title">
 				<div in:letterSlideIn={{ initDelay: 400 }}>
-					awards
+					education & certifications
 				</div>
 			</li>
 			<li>
 				<div in:letterSlideIn={{ initDelay: 550 }}>
-					1x — Awwwards Honors
+					BSc in Computer Science & Engineering — Metropolitan University
+				</div>
+			</li>
+			<li>
+				<div in:letterSlideIn={{ initDelay: 650 }}>
+					Google Cloud Developer Certification — Google Cloud Platform
 				</div>
 			</li>
 		</ul>
