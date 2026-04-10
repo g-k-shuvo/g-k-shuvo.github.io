@@ -211,7 +211,9 @@
 
 		@media only screen and (max-width: 950px)
 			&
-				width: 80%
+				width: 100%
+				margin: 0
+				padding-right: 0
 
 				h1
 					font-size: 25vw !important
@@ -230,7 +232,7 @@
 			@media only screen and (max-width: 750px)
 				&
 					width: 100%
-					margin-left: 5vw
+					margin-left: 0
 
 			&::before
 				content: ""
@@ -253,7 +255,7 @@
 
 			@media only screen and (max-width: 750px)
 				&
-					margin-left: 5vw
+					margin-left: 0
 
 
 	@media only screen and (max-width: 950px)
