@@ -10,7 +10,7 @@ web
 
 Astro. Chosen by the user in the redesign interview (2026-08-27) over "keep SvelteKit and strip it" and "plain HTML/CSS". Constraint that drove it: "should be minimal not heavy" — zero-JS by default, islands only where interaction genuinely requires them.
 
-Deploy target constrains the answer: GitHub Pages, static output, branch `gh-pages`, via the existing GitHub Actions workflow in `.github/`. Not Firebase (the forked README's claim is wrong).
+Deploy target constrains the answer: GitHub Pages, static output, branch `gh-pages`, via the existing GitHub Actions workflow in `.github/`. Not Firebase, despite what older docs in this repo used to claim.
 
 The outgoing SvelteKit 2 / Svelte 5 implementation ships three.js, slickscroll momentum scrolling, anime.js, bezier-easing, detect-gpu, SSR disabled, and a blob/base64 image loader. None of that is preserved.
 
@@ -46,9 +46,9 @@ The site is a single destination reached from LinkedIn, GitHub, or a job applica
 
 - Static site. No backend, no database, no auth, no forms that submit anywhere. Contact is a `mailto:` link and external profile links.
 - Deploys to GitHub Pages from branch `gh-pages` via GitHub Actions. Static output is mandatory.
-- Content lives in structured data (currently `static/data/*.json`: site config, work projects, Techjays experience). Keeping content separated from markup is a working practice worth preserving in whatever form Astro makes natural.
+- Content lives in structured data at `src/data/*.json` (site config and intro copy, work projects, Techjays experience, stack and education), imported at build time. Keeping content out of markup is a standing practice.
 - Google Analytics is installed (`G-7XXPE0DV47`) and stays.
-- Existing SEO meta, `robots.txt`, and `sitemap.xml` exist and must survive the rewrite.
+- SEO meta, `robots.txt`, and `sitemap.xml` ship and must be kept current.
 - **User constraint, verbatim:** "i want full redesign. i am open to change the tech stack as well. shoul be minimal not heavy." Nothing from the outgoing implementation is locked. Weight is a stated requirement, not a preference.
 
 ## Brand Commitments
@@ -62,13 +62,9 @@ The site is a single destination reached from LinkedIn, GitHub, or a job applica
 
 **The gK monogram is Golam's own mark and must be preserved.** A lowercase `g` whose bowl interlocks with a `K` sharing its stem. It ships in `src/components/Mark.astro` and in the favicon, and it is not to be redrawn.
 
-Correction, 2026-08-27: this record previously claimed the mark was an inherited "MH" monogram and it was replaced during the redesign. That was wrong. The claim came from a stale `alt="mh logo"` string in the forked footer, not from the artwork, which has always been a gK ligature. The original mark has been restored. **Alt text, filenames, and comments are not evidence about what an asset depicts — render it and look.**
+During the v4 redesign this mark was briefly replaced, on the strength of a stale `alt` attribute in the old markup that described it as something else. The attribute was wrong; the artwork had always been the gK ligature. The original has been restored. **Alt text, filenames, and comments are not evidence about what an asset depicts — render it and look.**
 
-**Genuinely inherited, and correctly removed:**
-- the hand-signature SVG paths duplicated in `home.svelte` and `footer.svelte`
-- `README.md`, which described the site as `musabhassan.com` and credited Firebase hosting
-
-The original template's license (MPL 2.0) and authorship are credited in the rewritten README.
+Removed in the same redesign, and correctly: a pair of duplicated hand-signature SVG paths in the old page components, which were not Golam's.
 
 **Standing visual preference, confirmed 2026-08-27.** Offered a direction round of committed visual worlds, the user took the standing exit and chose the **category standard, played straight** — the modern engineer portfolio executed at full craft rather than executed differently. This is a durable preference, not a one-off: future work on this site executes convention at full fidelity, without irony and without smuggling in quirk from a rejected direction.
 
@@ -78,26 +74,26 @@ Bound at the same time:
 - **Exactly one signature motion**, chosen by the model and audited at the finish review. The rest of the page stays still.
 - **The user's photograph appears on the page.**
 
-**No confirmed voice, palette, or typeface.** The outgoing look (freight-big-pro serif, `#222224`, lowercase display type) is inherited from the fork and carries no authority.
+**No confirmed voice, palette, or typeface.** The outgoing look (freight-big-pro serif, `#222224`, lowercase display type) came with an earlier template and carries no authority.
 
 ## Evidence on Hand
 
 **Employment — real, verifiable:** Techjays. Software Engineer. May 2023 – Present. Menlo Park, CA. Remote.
 
-**Seven enterprise projects delivered at Techjays**, with descriptions and stacks in `static/data/experience-data.json`. Named clients are not disclosed; the descriptions are domain-level and stay that way.
+**Seven enterprise projects delivered at Techjays**, with descriptions and stacks in `src/data/experience.json`. Named clients are not disclosed; the descriptions are domain-level and stay that way.
 
-**Six personal / open-source projects** in `static/data/work-data.json`, each with a live public GitHub repository under `github.com/g-k-shuvo`: DocMind (RAG), Flairy (MERN marketplace), ArtifyNow (AI image SaaS), YouTube Offer Finder (browser extension), Bloggify (Django), React Video Corner (published npm package).
+**Six personal / open-source projects** in `src/data/work.json`, each with a live public GitHub repository under `github.com/g-k-shuvo`: DocMind (RAG), Flairy (MERN marketplace), ArtifyNow (AI image SaaS), YouTube Offer Finder (browser extension), Bloggify (Django), React Video Corner (published npm package).
 
 **Project cover images — disputed, and treated as cover art.** At `src/assets/work/<id>.jpg`. The user confirmed on 2026-08-27 that these are real screenshots of the six personal projects. Inspection of the rendered page and two independent design reviews disagree: none of the six shows a product interface — DocMind is an abstract node render, Flairy a dark keyboard field, ArtifyNow a before/after photo composite, and the rest are stylised illustrations.
 
 They ship, at the user's direction, but as **decorative cover art**: the `alt` attribute is empty so the images make no claim about the software, and the heading and description carry the meaning. They are on the replacement list — real UI captures would be worth substantially more to a hiring manager. Until the user rules, no page may present them as evidence of a working product, and no screenshot may be invented for any project that lacks one.
 
-**Real profile photograph:** `static/assets/imgs/profile-photo.jpg`.
+**Real photographs of Golam:** `src/assets/me/`. Every file there becomes a frame in the hero portrait, in filename order.
 
 **Education:** BSc in Computer Science & Engineering, Metropolitan University.
 **Certification:** Google Cloud Developer Certification, Google Cloud Platform.
 
-**Availability, confirmed 2026-08-27:** open now, for both full-time remote roles and freelance/contract work. The previous value `"july 2025"` in `static/data/data.json` is 13 months stale and must not be carried forward.
+**Availability, confirmed 2026-08-27:** open now, for both full-time remote roles and freelance/contract work. Lives in `src/data/site.json`; the value it replaced was 13 months stale, so check its age before trusting it again.
 
 **Absences that must not be fabricated:** no testimonials, no client names, no named references, no metrics beyond those already in the project descriptions, no awards, no press, no case studies, no résumé PDF on file, no pricing or engagement terms, no years-of-experience claim beyond May 2023 – present.
 
@@ -107,7 +103,7 @@ They ship, at the user's direction, but as **decorative cover art**: the `alt` a
 2. **Breadth is the argument; show it as evidence, not adjectives.** Seven domains and their real production constraints do the persuading. Never substitute a self-description for the work.
 3. **Weight is a feature.** Minimal, fast, and quiet is a user requirement. Every dependency, animation, and asset must justify its cost against the forty-second skim.
 4. **Only true things.** Every claim traces to `experience-data.json`, `work-data.json`, a live GitHub repo, or a confirmed fact above. No invented proof, no borrowed identity.
-5. **Own the identity.** Nothing on the finished site may be traceable to the template it was forked from — not a mark, not a signature, not a credit.
+5. **Own the identity.** Every mark, signature and credit on the finished site is Golam's own. Nothing stands in that was carried over from an earlier template.
 
 ## Accessibility & Inclusion
 

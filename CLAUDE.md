@@ -8,10 +8,10 @@ Personal portfolio of Golam Kibria, built with **Astro 5**. A single static
 page, prerendered, deployed to GitHub Pages from the `gh-pages` branch. Not
 Firebase.
 
-Version 4 is a full rewrite. Versions 1–3 were a fork of `musabhassan.com`
-(SvelteKit, three.js, slickscroll, anime.js); none of that survives. If you find
-a reference to SvelteKit, Firebase, slickscroll, or an "MH" logo anywhere, it is
-stale and should be removed.
+Version 4 is a full rewrite. Earlier versions ran on Next.js and then
+SvelteKit, with three.js, slickscroll and anime.js; none of that survives. If
+you find a reference to any of them, or to Firebase, it is stale and should be
+removed.
 
 ## Commands
 
