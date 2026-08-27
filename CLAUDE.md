@@ -1,58 +1,87 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Guidance for Claude Code (claude.ai/code) when working in this repository.
 
 ## Project Overview
 
-Personal portfolio website of Golam Kibria, built with SvelteKit 2 + Svelte 5. Single-page app with SSR disabled (`src/routes/+page.ts` exports `ssr = false`). Deploys to GitHub Pages (branch `gh-pages`), not Firebase.
+Personal portfolio of Golam Kibria, built with **Astro 5**. A single static
+page, prerendered, deployed to GitHub Pages from the `gh-pages` branch. Not
+Firebase.
+
+Version 4 is a full rewrite. Versions 1–3 were a fork of `musabhassan.com`
+(SvelteKit, three.js, slickscroll, anime.js); none of that survives. If you find
+a reference to SvelteKit, Firebase, slickscroll, or an "MH" logo anywhere, it is
+stale and should be removed.
 
 ## Commands
 
 - **Dev server:** `npm run dev`
-- **Build:** `npm run build`
+- **Build:** `npm run build` → `dist/`
 - **Preview build:** `npm run preview`
 - **Type check:** `npm run check`
+- **Design captures:** `npm run shots` → `.impeccable/review/{desktop,mobile}.png`
 
-No test framework is configured. No linter is configured.
+No linter is configured. `tests/capture.spec.ts` is a capture harness for design
+review, not a behavioural test suite.
 
 ## Architecture
 
-### Routing & Page Load
+Single route, `src/pages/index.astro`, composed of section components. All
+rendering happens at build time.
 
-Single route at `src/routes/+page.svelte`. On mount, it fetches JSON data from `static/data/`, waits for image preloading and the loader animation, then initializes slickscroll (momentum scrolling).
+### Content
 
-### State Management
+Content is data, not markup. It lives in `src/data/*.json` and is imported
+directly by components at build time — never fetched at runtime. When adding a
+project or a skill, edit the JSON.
 
-Two patterns coexist:
-- **Svelte 5 runes** (`$state`): `src/lib/state.svelte.ts` — shared reactive state for viewport, scroll anchors, work scroll, and fetched data.
-- **Svelte stores** (legacy): `src/lib/store.ts` — writable stores for image loading promises and page load synchronization.
+### Images
 
-### Sections & Components
+Images under `src/assets/` go through `astro:assets` (`<Image />`) and are
+optimised to WebP with responsive `widths`. Images in `public/` ship untouched
+and are not optimised — put only the favicon and crawler files there.
 
-- `src/lib/sections/` — page sections: home, work, about
-- `src/lib/components/` — nav, footer, cursor-dot, loader
+**Gotcha:** `<Image />` emits intrinsic `width`/`height` attributes. If you set
+`aspect-ratio` on an image you must also set `height: auto`, or the attribute
+wins and the ratio is silently ignored.
 
-### Animation System
+### Design system
 
-`src/lib/animations.ts` provides custom Svelte transition functions (`letterSlideIn`, `letterSlideOut`, `maskSlideIn`, `maskSlideOut`, `workImageIntro`, `workListIntro`) using anime.js and bezier-easing. These work both declaratively via Svelte `in:`/`out:` directives and programmatically via an `.anime()` method.
+`src/styles/global.css` holds every token and the shared component language.
+Component-scoped styles live in each `.astro` file's `<style>` block. There is
+no CSS framework.
 
-### WebGL Effects
+The single shared component is `.plane` — a raised surface with a real offset
+shadow and a 1px specular top edge. Anything that needs to sit above the ground
+uses it. Do not invent a second card treatment.
 
-`src/lib/effects/` contains Three.js-based renderers:
-- `defaults/` — shared image mesh and renderer setup
-- `work-slider/` — custom shader-based slider effect for the work section
+Read `DESIGN.md` before changing anything visual; it records the system as
+actually built.
 
-### Data
+### Motion
 
-Content is driven by JSON files in `static/data/`:
-- `data.json` — site-wide config (availability date)
-- `work-data.json` — project/work items
+The page has exactly one authored motion: the **raking light**
+(`src/scripts/raking-light.ts`), which tracks the pointer across `.plane`
+elements. There are no entrance animations — content is legible at first paint,
+by design.
 
-### Styling
+Anything you add must respect `prefers-reduced-motion` and coarse pointers, and
+must not delay content. The user's stated anti-goal is "slow, heavy, or animated
+at me."
 
-SASS embedded in Svelte components via `<style lang="sass">`. No global stylesheet file — global styles are set in `+page.svelte`.
+## Constraints
 
-## Key Caveats
+- **Static only.** No backend, no forms that submit, no runtime data fetching.
+- **Weight is a feature.** The build ships zero external JS files. Adding a
+  dependency needs a real justification.
+- **Only true things.** Every claim traces to `src/data/*.json`, a live GitHub
+  repo, or a confirmed fact in `PRODUCT.md`. No invented metrics, testimonials,
+  client names, or capabilities. `PRODUCT.md` lists what must not be fabricated.
+- **Accessibility is not optional.** Semantic HTML, keyboard reachability,
+  visible focus, 4.5:1 body contrast, meaningful alt text.
 
-- HMR is broken due to the Rollup-to-Vite migration. Full page reload required after changes.
-- Image loading uses `src/lib/utils.ts:loadImage()` which fetches images as blobs and converts to data URLs — adding new images to a section requires using this function.
+## Records
+
+- `PRODUCT.md` — durable product truth: users, positioning, evidence, brand
+  commitments, what must not be invented.
+- `DESIGN.md` — the visual system as built.

@@ -1,0 +1,31 @@
+---
+/**
+ * GK monogram. Monoline, built from the same geometry as the page's grotesk:
+ * one stroke weight, round joins, no ornament. Replaces the "MH" mark this
+ * codebase inherited from the template it was forked from.
+ */
+interface Props {
+	size?: number;
+	class?: string;
+}
+
+const { size = 24, class: className } = Astro.props;
+---
+
+<svg
+	class={className}
+	width={(size * 38) / 24}
+	height={size}
+	viewBox="0 0 38 24"
+	fill="none"
+	stroke="currentColor"
+	stroke-width="2"
+	stroke-linecap="round"
+	stroke-linejoin="round"
+	role="img"
+	aria-label="Golam Kibria"
+>
+	<path d="M15.6 8.14A6 6 0 1 0 17 12h-4.4" />
+	<path d="M25 6v12" />
+	<path d="M31.2 6.8 25 12.4l6.4 5.8" />
+</svg>

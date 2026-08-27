@@ -1,0 +1,118 @@
+---
+import stack from '../data/stack.json';
+---
+
+<section id="stack">
+	<div class="shell">
+		<div class="section-head">
+			<h2>Stack</h2>
+			<p class="label">Front-end through infrastructure</p>
+		</div>
+
+		<dl class="groups">
+			{
+				stack.groups.map((group) => (
+					<div class="group">
+						<dt>{group.label}</dt>
+						<dd>
+							<ul>
+								{group.items.map((item) => (
+									<li>{item}</li>
+								))}
+							</ul>
+						</dd>
+					</div>
+				))
+			}
+		</dl>
+
+		<div class="education">
+			<h3>Education &amp; certification</h3>
+			<ul>
+				{
+					stack.education.map((entry) => (
+						<li>
+							<span class="title">{entry.title}</span>
+							<span class="meta">{entry.issuer}</span>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</div>
+</section>
+
+<style>
+	.group {
+		display: grid;
+		grid-template-columns: minmax(0, 10rem) minmax(0, 1fr);
+		gap: 0.5rem clamp(2rem, 5vw, 4rem);
+		align-items: baseline;
+		padding-block: 1.375rem;
+		border-block-end: 1px solid var(--line);
+	}
+
+	.group:first-child {
+		padding-block-start: 0;
+	}
+
+	dt {
+		font-size: 0.9375rem;
+		font-weight: 500;
+		letter-spacing: -0.01em;
+		color: var(--ink);
+	}
+
+	/* Gap, not rules — a wrapped row strands a dangling separator at line end. */
+	dd ul {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: 1.5rem;
+		row-gap: 0.4375rem;
+	}
+
+	dd li {
+		font-size: 0.9375rem;
+		color: var(--ink-2);
+		line-height: 1.35;
+	}
+
+	.education {
+		margin-block-start: 3.5rem;
+	}
+
+	.education h3 {
+		color: var(--ink-2);
+		font-weight: 500;
+		margin-block-end: 1.25rem;
+	}
+
+	.education ul {
+		list-style: none;
+		display: grid;
+		gap: 1rem;
+	}
+
+	.education li {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.25rem 1.5rem;
+		padding-block-end: 1rem;
+		border-block-end: 1px solid var(--line);
+	}
+
+	.education .title {
+		font-size: 0.9375rem;
+		color: var(--ink);
+	}
+
+	@media (max-width: 760px) {
+		.group {
+			grid-template-columns: 1fr;
+			gap: 0.75rem;
+		}
+	}
+</style>

@@ -3,36 +3,26 @@
 	"author": {
 		"name": "Golam Kibria"
 	},
-	"version": "2.2.0",
+	"version": "4.0.0",
 	"private": true,
+	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
-	},
-	"devDependencies": {
-		"@playwright/test": "^1.59.1",
-		"@sveltejs/adapter-auto": "^6.0.0",
-		"@sveltejs/adapter-static": "^3.0.10",
-		"@sveltejs/kit": "^2.20.8",
-		"@sveltejs/vite-plugin-svelte": "^5.0.3",
-		"@types/animejs": "^3.1.13",
-		"@types/three": "^0.176.0",
-		"sass": "^1.87.0",
-		"svelte": "^5.28.2",
-		"svelte-check": "^4.1.6",
-		"tslib": "^2.8.1",
-		"typescript": "^5.8.3",
-		"vite": "^6.3.4"
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"check": "astro check",
+		"shots": "playwright test"
 	},
 	"dependencies": {
-		"animejs": "^4.0.2",
-		"bezier-easing": "^2.1.0",
-		"detect-gpu": "^5.0.70",
-		"slickscrolljs": "^2.0.2",
-		"three": "^0.176.0"
+		"@fontsource-variable/geist": "^5.2.5",
+		"@fontsource-variable/geist-mono": "^5.2.5",
+		"astro": "^5.6.1",
+		"sharp": "^0.34.1"
 	},
-	"type": "module"
+	"devDependencies": {
+		"@astrojs/check": "^0.9.10",
+		"@playwright/test": "^1.59.1",
+		"@types/node": "^26.4.0",
+		"typescript": "^5.9.3"
+	}
 }

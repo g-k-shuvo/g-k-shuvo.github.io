@@ -1,0 +1,258 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import Mark from './Mark.astro';
+import site from '../data/site.json';
+
+// Every photograph in src/assets/me/ becomes a frame in the hero portrait,
+// in filename order. Drop a file in, it appears; remove it, it goes. With one
+// file the portrait is simply static and no cycling script does any work.
+const shots = Object.entries(
+	import.meta.glob<{ default: ImageMetadata }>('../assets/me/*.{jpg,jpeg,png,webp}', {
+		eager: true
+	})
+)
+	.sort(([a], [b]) => a.localeCompare(b))
+	.map(([, module]) => module.default);
+---
+
+<header class="hero">
+	<div class="shell">
+		<a class="brand" href="#top" aria-label="Golam Kibria — top of page">
+			<Mark size={20} />
+		</a>
+
+		<div class="grid">
+			<div class="claim">
+				<h1 id="top">Golam Kibria</h1>
+
+				<p class="role">Software Engineer</p>
+
+				<div class="intro">
+					{site.intro.map((paragraph) => <p class="lede">{paragraph}</p>)}
+				</div>
+
+				<p class="status">
+					<span class="dot" aria-hidden="true"></span>
+					{site.availability}
+				</p>
+
+				<div class="actions">
+					<a class="btn btn-primary" href="mailto:gkshuvo24@gmail.com">
+						Email me
+						<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+							<path d="M3 8h10M9 4l4 4-4 4" />
+						</svg>
+					</a>
+					<a class="btn btn-ghost" href="https://github.com/g-k-shuvo" rel="me noreferrer" target="_blank">
+						<svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+							<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+						</svg>
+						GitHub
+					</a>
+					<a class="btn btn-ghost" href="https://www.linkedin.com/in/g-k-shuvo/" rel="me noreferrer" target="_blank">
+						<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+							<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065Zm1.782 13.019H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0Z" />
+						</svg>
+						LinkedIn
+					</a>
+				</div>
+			</div>
+
+			<figure class="portrait plane plane--raised" data-portrait>
+				<div class="frames">
+					{
+						shots.map((shot, i) => (
+							<Image
+								src={shot}
+								alt={i === 0 ? 'Golam Kibria' : ''}
+								class:list={['shot', { 'is-active': i === 0 }]}
+								data-shot
+								widths={[380, 560, 760]}
+								sizes="(max-width: 900px) 88vw, 26rem"
+								quality={82}
+								loading={i === 0 ? 'eager' : 'lazy'}
+								fetchpriority={i === 0 ? 'high' : 'auto'}
+							/>
+						))
+					}
+				</div>
+			</figure>
+		</div>
+	</div>
+</header>
+
+<style>
+	.hero {
+		padding-block-start: clamp(1.75rem, 4vh, 3rem);
+	}
+
+	.brand {
+		display: inline-flex;
+		color: var(--ink);
+		opacity: 0.9;
+		text-decoration: none;
+		margin-block-end: clamp(4rem, 12vh, 8rem);
+	}
+
+	.brand:hover {
+		opacity: 1;
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+		gap: clamp(2.5rem, 6vw, 5rem);
+		align-items: center;
+		padding-block-end: clamp(3rem, 8vh, 5rem);
+	}
+
+	h1 {
+		margin-block-end: 0.75rem;
+	}
+
+	.role {
+		font-size: clamp(1.125rem, 2vw, 1.375rem);
+		font-weight: 450;
+		letter-spacing: -0.02em;
+		color: var(--ink-2);
+		margin-block-end: 2rem;
+	}
+
+	.intro {
+		display: grid;
+		gap: 1.125rem;
+		margin-block-end: 2rem;
+	}
+
+	/* The opening sentence carries the most weight; what follows supports it. */
+	.intro .lede:first-child {
+		color: var(--ink);
+	}
+
+	.status {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5625rem;
+		font-size: 0.875rem;
+		color: var(--ink-2);
+		margin-block-end: 2rem;
+	}
+
+	.dot {
+		position: relative;
+		width: 7px;
+		height: 7px;
+		border-radius: 50%;
+		background: var(--live);
+		flex: none;
+	}
+
+	.dot::after {
+		content: '';
+		position: absolute;
+		inset: -3px;
+		border-radius: 50%;
+		border: 1px solid var(--live);
+		opacity: 0.45;
+		animation: breathe 2.8s var(--ease) infinite;
+	}
+
+	@keyframes breathe {
+		0%,
+		100% {
+			transform: scale(1);
+			opacity: 0.45;
+		}
+		50% {
+			transform: scale(1.5);
+			opacity: 0;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.dot::after {
+			animation: none;
+		}
+	}
+
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.625rem;
+	}
+
+	/* A mount, not a crop: the plane's own surface shows as a margin around the
+	   photograph, so the tier and its light are visible rather than covered. */
+	.portrait {
+		aspect-ratio: 4 / 5;
+		padding: 7px;
+		border-radius: var(--radius);
+	}
+
+	/* The wash falls ON the photograph, not behind it. */
+	.portrait::after {
+		z-index: 5;
+		mix-blend-mode: soft-light;
+	}
+
+	/* Frames stack in one well so a cross-fade never moves layout. */
+	.frames {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		border-radius: var(--radius-inner);
+		overflow: hidden;
+	}
+
+	.portrait :global(.shot) {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center 22%;
+		/* The portrait sits in the page's greyscale, warmed just enough to stay human. */
+		filter: grayscale(0.5) contrast(1.05) brightness(1.02);
+		opacity: 0;
+		transition: opacity 1.4s var(--ease), filter 0.6s var(--ease);
+	}
+
+	.portrait :global(.shot.is-active) {
+		opacity: 1;
+	}
+
+	.portrait:hover :global(.shot) {
+		filter: grayscale(0) contrast(1.02) brightness(1);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.portrait :global(.shot) {
+			transition: none;
+		}
+	}
+
+	@media (max-width: 900px) {
+		.grid {
+			grid-template-columns: 1fr;
+			gap: 2.75rem;
+		}
+
+		/* The name leads on the phone too. A 15rem square above it pushed the
+		   claim off the first screen of an 844px viewport. Full column width
+		   below that — a capped portrait left dead rail on both sides. */
+		.portrait {
+			max-width: none;
+			aspect-ratio: 4 / 5;
+		}
+
+		.brand {
+			margin-block-end: 3rem;
+		}
+	}
+</style>
+
+<script>
+	import { portraitCycle } from '../scripts/portrait-cycle';
+	portraitCycle();
+</script>

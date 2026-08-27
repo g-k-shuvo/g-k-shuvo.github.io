@@ -1,3 +1,0 @@
-Sitemap: https://g-k-shuvo.github.io/sitemap.xml
-User-Agent: *
-Allow: /

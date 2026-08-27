@@ -1,0 +1,189 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import work from '../data/work.json';
+
+const covers = import.meta.glob<{ default: ImageMetadata }>('../assets/work/*.jpg', {
+	eager: true
+});
+
+const coverFor = (id: string) => covers[`../assets/work/${id}.jpg`]?.default;
+
+// Covers are atmospheric cover art, not product captures. They carry no
+// information the heading and description do not, so they are decorative and
+// take an empty alt — an alt naming the product would claim the image shows it.
+---
+
+<section id="work">
+	<div class="shell">
+		<div class="section-head">
+			<h2>Independent work</h2>
+			<p class="meta">{work.length} projects &middot; source on GitHub</p>
+		</div>
+
+		<ul class="gallery">
+			{
+				work.map((project, i) => {
+					const cover = coverFor(project.id);
+					const href = project.links[0]?.link;
+					return (
+						<li class="item plane">
+							<a href={href} target="_blank" rel="noreferrer">
+								{cover && (
+									<Image
+										src={cover}
+										alt=""
+										widths={[480, 720, 960]}
+										sizes="(max-width: 760px) 92vw, (max-width: 1100px) 46vw, 30rem"
+										quality={78}
+										loading={i < 2 ? 'eager' : 'lazy'}
+									/>
+								)}
+								<div class="body">
+									<div class="head">
+										<h3>{project.title}</h3>
+										<span class="label">{project.details.summary}</span>
+									</div>
+									<p>{project.details.description}</p>
+									<span class="cue">
+										View source
+										<svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+											<path d="M5.5 10.5 10.5 5.5M6.5 5.5h4v4" />
+										</svg>
+									</span>
+								</div>
+							</a>
+						</li>
+					);
+				})
+			}
+		</ul>
+	</div>
+</section>
+
+<style>
+	.gallery {
+		list-style: none;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(21rem, 100%), 1fr));
+		gap: clamp(1rem, 2vw, 1.5rem);
+	}
+
+	.item {
+		overflow: hidden;
+	}
+
+	.item a {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.item :global(img) {
+		width: 100%;
+		/* height:auto is load-bearing — without it the intrinsic height attribute
+		   wins and aspect-ratio is ignored, leaving every cover a different depth. */
+		height: auto;
+		aspect-ratio: 16 / 10;
+		object-fit: cover;
+		object-position: top center;
+		border-block-end: 1px solid var(--line);
+		filter: saturate(0.88) brightness(0.86);
+		transition: filter 0.55s var(--ease), transform 0.7s var(--ease);
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		.item:hover :global(img) {
+			filter: saturate(1) brightness(1);
+			transform: scale(1.015);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.item :global(img) {
+			transition: none;
+		}
+		.item:hover :global(img) {
+			transform: none;
+		}
+	}
+
+	.body {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		padding: 1.375rem 1.375rem 1.25rem;
+	}
+
+	.head {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 1rem;
+		margin-block-end: 0.625rem;
+	}
+
+	.head h3 {
+		color: var(--ink);
+	}
+
+	.head .label {
+		text-align: end;
+		white-space: nowrap;
+	}
+
+	.body p {
+		color: var(--ink-2);
+		font-size: 0.875rem;
+		line-height: 1.7;
+		margin-block-end: 1.25rem;
+	}
+
+	.cue {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.375rem;
+		margin-block-start: auto;
+		font-size: 0.8125rem;
+		font-weight: 500;
+		color: var(--ink-3);
+		transition: color 0.3s var(--ease);
+	}
+
+	.cue svg {
+		transition: transform 0.35s var(--ease);
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		.item:hover .cue {
+			color: var(--ink);
+		}
+
+		.item:hover .cue svg {
+			transform: translate(2px, -2px);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.cue,
+		.cue svg {
+			transition: none;
+		}
+		.item:hover .cue svg {
+			transform: none;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.head {
+			flex-direction: column;
+			gap: 0.25rem;
+		}
+
+		.head .label {
+			text-align: start;
+		}
+	}
+</style>

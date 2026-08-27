@@ -1,0 +1,96 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<meta name="author" content="Golam Kibria" />
+		<meta name="theme-color" content="#0b0b0e" />
+		<meta
+			name="keywords"
+			content="Golam Kibria, software engineer, full stack developer, Django, React, Vue, Node.js, AWS, GCP, RAG, machine learning, Bangladesh, remote"
+		/>
+
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+
+		<script
+			type="application/ld+json"
+			is:inline
+			set:html={JSON.stringify({
+				'@context': 'https://schema.org',
+				'@type': 'Person',
+				name: 'Golam Kibria',
+				jobTitle: 'Software Engineer',
+				url: 'https://g-k-shuvo.github.io',
+				email: 'mailto:gkshuvo24@gmail.com',
+				worksFor: { '@type': 'Organization', name: 'Techjays' },
+				alumniOf: { '@type': 'CollegeOrUniversity', name: 'Metropolitan University' },
+				address: { '@type': 'PostalAddress', addressCountry: 'BD' },
+				sameAs: ['https://github.com/g-k-shuvo', 'https://www.linkedin.com/in/g-k-shuvo/']
+			})}
+		/>
+
+		<script
+			is:inline
+			defer
+			src="https://www.googletagmanager.com/gtag/js?id=G-7XXPE0DV47"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+			gtag('config', 'G-7XXPE0DV47');
+		</script>
+	</head>
+
+	<body>
+		<!--
+		THESIS: The category standard executed at material grade, chosen by the user over a
+		dealt hand of committed worlds. Refuses the expressive concept portfolio and the
+		generic dev template alike; the work is the only colour on the page.
+		OWN-WORLD: True near-black #0B0B0E under a measured grain — a few levels off the
+		floor because a black shadow needs somewhere to fall. Three plane tiers (#0D0D11
+		sunken, #16161A base, #1C1C22 raised), each with a specular top edge lit at rest
+		and a real offset shadow. Geist at three sizes, greyscale throughout, one
+		functional live-green dot. No accent, no gradient, no eyebrow.
+		STORY: A hiring manager skimming to disqualify learns in seconds that one engineer
+		shipped seven enterprise domains end to end, finds the proof, and mails him.
+		FIRST VIEWPORT: Name at display scale left, role and a two-sentence factual claim
+		beneath it, live availability, a white Email pill as the primary action; portrait
+		right on a raised plane catching the light. The Techjays index begins at the fold.
+		FORM: Category standard — the standing exit, user-chosen against the roll; craft bar
+		Raycast/Arc/Family; signature motion is the raking light. Seed key 153ed001.
+		FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+		-->
+		<div class="grain" aria-hidden="true"></div>
+		<slot />
+
+		<script>
+			import { rakingLight } from '../scripts/raking-light';
+			rakingLight();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font-size",
+        "value": "1rem",
+        "createdAt": "2026-08-27T12:29:16.840Z",
+        "reason": "model triage: body root font-size, the base the entire rem ramp derives from, not a ramp step"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "3px",
+        "createdAt": "2026-08-27T12:29:17.031Z",
+        "reason": "model triage: :focus-visible ring rounding, a browser-surface detail, not a component shape on the plane scale"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#000",
+        "createdAt": "2026-08-27T12:29:17.231Z",
+        "reason": "model triage: paint inside linear-gradient(#000 0 0) mask declarations; a mask uses only the alpha channel so the hue is not a palette choice"
+      }
+    ]
+  }
+}

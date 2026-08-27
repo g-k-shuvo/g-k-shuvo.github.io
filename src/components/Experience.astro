@@ -1,0 +1,103 @@
+---
+import experience from '../data/experience.json';
+---
+
+<section id="experience">
+	<div class="shell">
+		<div class="section-head">
+			<h2>{experience.role} at {experience.company}</h2>
+			<p class="meta">
+				{experience.location} &middot; {experience.workMode} &middot; {experience.duration}
+			</p>
+		</div>
+
+		<ol class="index">
+			{
+				experience.projects.map((project) => (
+					<li class="row plane plane--sunken">
+						<div class="row-head">
+							<h3>{project.title}</h3>
+							<p class="label">{project.type}</p>
+						</div>
+						<p class="row-body">{project.description}</p>
+						<ul class="tags">
+							{project.techStack.map((tech) => (
+								<li class="tag">{tech}</li>
+							))}
+						</ul>
+					</li>
+				))
+			}
+		</ol>
+
+		<aside class="highlight plane plane--sunken">
+			<h3>{experience.highlight.title}</h3>
+			<p>{experience.highlight.description}</p>
+			<ul class="tags">
+				{experience.highlight.techStack.map((tech) => <li class="tag">{tech}</li>)}
+			</ul>
+		</aside>
+	</div>
+</section>
+
+<style>
+	.index {
+		list-style: none;
+		display: grid;
+		gap: clamp(1rem, 2vw, 1.5rem);
+	}
+
+	/* Every project is its own recessed well, in the same material, padding and
+	   stacked arrangement as the highlight block that closes the section. */
+	.row {
+		padding: clamp(1.75rem, 3.5vw, 2.5rem);
+	}
+
+	.row-head {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.25rem 1.5rem;
+		margin-block-end: 0.875rem;
+	}
+
+	.row-head h3 {
+		color: var(--ink);
+		font-size: 1.1875rem;
+	}
+
+	.row-body {
+		color: var(--ink-2);
+		font-size: 0.9375rem;
+		line-height: 1.7;
+		max-width: 62ch;
+		margin-block-end: 1.25rem;
+	}
+
+	.highlight {
+		margin-block-start: 3.5rem;
+		padding: clamp(1.75rem, 3.5vw, 2.5rem);
+	}
+
+	.highlight h3 {
+		font-size: 1.1875rem;
+		margin-block-end: 0.75rem;
+	}
+
+	.highlight p {
+		color: var(--ink-2);
+		font-size: 0.9375rem;
+		line-height: 1.7;
+		max-width: 62ch;
+		margin-block-end: 1.25rem;
+	}
+
+	@media (max-width: 560px) {
+		/* The type label drops under the title rather than squeezing beside it. */
+		.row-head {
+			flex-direction: column;
+			gap: 0.25rem;
+		}
+	}
+</style>

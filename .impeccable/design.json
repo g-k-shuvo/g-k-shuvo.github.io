@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-27T12:00:00Z",
+  "title": "Design System: Golam Kibria — Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Ground Graphite",
+        "canonical": "#0b0b0e",
+        "tonalRamp": ["#050507", "#0b0b0e", "#131318", "#1f1f26", "#33333d", "#5c5c69", "#8f8f9b", "#e9e9ee"]
+      },
+      "surface-sunken": {
+        "role": "neutral",
+        "displayName": "Sunken Well",
+        "canonical": "#0d0d11",
+        "tonalRamp": ["#060608", "#0d0d11", "#15151b", "#212129", "#353540", "#5e5e6c", "#91919e", "#eaeaef"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Plane Graphite",
+        "canonical": "#16161a",
+        "tonalRamp": ["#08080a", "#0f0f12", "#16161a", "#22222a", "#363642", "#5f5f6e", "#9292a0", "#ebebf0"]
+      },
+      "surface-raised": {
+        "role": "neutral",
+        "displayName": "Raised Graphite",
+        "canonical": "#1c1c22",
+        "tonalRamp": ["#0a0a0c", "#131317", "#1c1c22", "#282830", "#3c3c48", "#656574", "#9797a5", "#ececf1"]
+      },
+      "surface-hi": {
+        "role": "neutral",
+        "displayName": "Hover Graphite",
+        "canonical": "#1f1f26",
+        "tonalRamp": ["#0b0b0d", "#151519", "#1f1f26", "#2b2b34", "#3f3f4c", "#686878", "#9999a8", "#ededf2"]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(255, 255, 255, 0.085)",
+        "tonalRamp": ["rgba(255,255,255,0.02)", "rgba(255,255,255,0.04)", "rgba(255,255,255,0.055)", "rgba(255,255,255,0.085)", "rgba(255,255,255,0.12)", "rgba(255,255,255,0.16)", "rgba(255,255,255,0.24)", "rgba(255,255,255,0.4)"]
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Hairline Strong",
+        "canonical": "rgba(255, 255, 255, 0.16)",
+        "tonalRamp": ["rgba(255,255,255,0.03)", "rgba(255,255,255,0.06)", "rgba(255,255,255,0.1)", "rgba(255,255,255,0.16)", "rgba(255,255,255,0.24)", "rgba(255,255,255,0.34)", "rgba(255,255,255,0.5)", "rgba(255,255,255,0.72)"]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Bone Ink",
+        "canonical": "#f4f4f5",
+        "tonalRamp": ["#232326", "#3a3a3e", "#525258", "#6d6d74", "#8f8f97", "#b4b4bb", "#d6d6da", "#f4f4f5"]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink Secondary",
+        "canonical": "#a5a5ae",
+        "tonalRamp": ["#1a1a1d", "#2e2e33", "#45454c", "#5f5f68", "#7d7d87", "#a5a5ae", "#c8c8cf", "#eaeaee"]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Ink Tertiary",
+        "canonical": "#85858f",
+        "tonalRamp": ["#161619", "#28282d", "#3d3d44", "#55555e", "#6d6d77", "#85858f", "#adadb5", "#dededf"]
+      },
+      "live": {
+        "role": "secondary",
+        "displayName": "Live Green",
+        "canonical": "#4ade80",
+        "tonalRamp": ["#062e18", "#0a4b27", "#0f6b39", "#158f4d", "#1cb663", "#31d47d", "#4ade80", "#b7f2cf"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The name, once, in the first viewport. Nothing else on the page uses this scale." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings and the contact question. Balanced wrapping, contact heading capped at 20ch." },
+      "address": { "displayName": "Address", "purpose": "One element: the email link closing the contact plane. Underscored by a real 1px rule, not a text-decoration." },
+      "role": { "displayName": "Role", "purpose": "One element: the line under the name. Always below the display name, never above it — it is the shape a kicker would take." },
+      "lede": { "displayName": "Lede", "purpose": "The claim under the name and the closing paragraph. Secondary ink, 68ch measure." },
+      "title": { "displayName": "Title", "purpose": "Project names in the experience index, work card headings, the education heading. 1.1875rem inside the sunken highlight only." },
+      "control": { "displayName": "Control", "purpose": "Both pill buttons and the stack group labels — type that names an action or a group rather than describing one." },
+      "body": { "displayName": "Body", "purpose": "Descriptions in index rows, the sunken highlight, stack entries. Secondary ink, 62ch measure." },
+      "body-sm": { "displayName": "Body Small", "purpose": "Hero status line, work card description, footer nav destinations — copy beside a denser block that must not compete with the body measure." },
+      "label": { "displayName": "Label", "purpose": "Category names, kinds, one-line summaries, the copyright line. Sans, always — never mono." },
+      "meta": { "displayName": "Meta", "purpose": "Measurement only: dates, durations, counts, locations, issuers. Mono with tabular numerals." }
+    },
+    "shadows": [
+      {
+        "name": "plane-base",
+        "value": "inset 0 1px 0 rgba(255,255,255,0.07), 0 1px 2px rgba(0,0,0,0.55), 0 10px 26px -14px rgba(0,0,0,0.9)",
+        "purpose": "The default material tier — work cards. Lit top edge, contact shadow, soft cast."
+      },
+      {
+        "name": "plane-raised",
+        "value": "inset 0 1px 0 rgba(255,255,255,0.1), 0 2px 4px rgba(0,0,0,0.55), 0 22px 50px -22px rgba(0,0,0,1)",
+        "purpose": "Focal tier. Exactly two instances: hero portrait mount and contact close block."
+      },
+      {
+        "name": "plane-sunken",
+        "value": "inset 0 1px 3px rgba(0,0,0,0.85), inset 0 -1px 0 rgba(255,255,255,0.045)",
+        "purpose": "Shallow well. Reads recessed via inset shadow and a lit bottom edge, not via darkness. Sits above the ground, never below it."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 2px solid #f4f4f5; outline-offset: 3px; border-radius: 3px",
+        "purpose": "Global :focus-visible treatment on every interactive element."
+      }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The single easing curve. Every transition on the page uses it." },
+      { "name": "duration-control", "value": "0.25s", "purpose": "Buttons, links, borders — anything the pointer touches directly." },
+      { "name": "duration-surface", "value": "0.4s–0.7s", "purpose": "Plane background and border shifts, image filter recovery, cover scale." },
+      { "name": "duration-light", "value": "0.45s–0.5s", "purpose": "The raking wash fade and specular edge travel." },
+      { "name": "breathe", "value": "2.8s cubic-bezier(0.16,1,0.3,1) infinite", "purpose": "The live-status dot ring, scaling 1 → 1.5 while fading out. Disabled under reduced motion." },
+      { "name": "portrait-crossfade", "value": "opacity 1.4s cubic-bezier(0.16,1,0.3,1) every 5000ms", "purpose": "Bounded exception to the one-motion rule. Hero portrait frame swap only; exits under two photographs and under reduced motion, pauses off-screen and in a background tab." }
+    ],
+    "breakpoints": [
+      { "name": "card-head", "value": "560px" },
+      { "name": "domain-columns", "value": "640px" },
+      { "name": "row-collapse", "value": "760px" },
+      { "name": "hero-collapse", "value": "900px" }
+    ],
+    "light": [
+      { "name": "--lx", "value": "30%", "purpose": "Resting horizontal position of the raking light. A default, not a placeholder." },
+      { "name": "--ly", "value": "0%", "purpose": "Resting vertical position — the light falls from the upper edge." },
+      { "name": "--lit", "value": "0", "purpose": "Raised only while a fine pointer is over a plane. At 0 the specular edge still renders at 0.16 alpha." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one primary action per view — the Email pill. Bone fill on near-black text, arrow slides on hover.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">Email me<svg width=\"14\" height=\"14\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 8h10M9 4l4 4-4 4\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--sans, 'Geist Variable', ui-sans-serif, system-ui, sans-serif); font-size: 0.9375rem; font-weight: 500; letter-spacing: -0.01em; line-height: 1; padding: 0.8125rem 1.25rem; border-radius: 99px; border: 1px solid transparent; text-decoration: none; white-space: nowrap; transition: background-color 0.25s cubic-bezier(0.16,1,0.3,1), border-color 0.25s cubic-bezier(0.16,1,0.3,1), color 0.25s cubic-bezier(0.16,1,0.3,1); } .ds-btn svg { flex: none; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary { background: var(--ink, #f4f4f5); color: #0a0a0c; } .ds-btn-primary:hover { background: #fff; } .ds-btn-primary:hover svg { transform: translateX(2px); } .ds-btn-primary:focus-visible { outline: 2px solid var(--ink, #f4f4f5); outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary destinations (GitHub, LinkedIn). A 3% white wash inside a hairline, same pill box as primary.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 16 16\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z\"/></svg>GitHub</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--sans, 'Geist Variable', ui-sans-serif, system-ui, sans-serif); font-size: 0.9375rem; font-weight: 500; letter-spacing: -0.01em; line-height: 1; padding: 0.8125rem 1.25rem; border-radius: 99px; text-decoration: none; white-space: nowrap; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.085); color: var(--ink, #f4f4f5); transition: background-color 0.25s cubic-bezier(0.16,1,0.3,1), border-color 0.25s cubic-bezier(0.16,1,0.3,1); } .ds-btn-ghost svg { flex: none; } .ds-btn-ghost:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.16); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--ink, #f4f4f5); outline-offset: 3px; }"
+    },
+    {
+      "name": "Plane (base tier)",
+      "kind": "card",
+      "refersTo": "plane",
+      "description": "The one container language on the page. Tonal step, hairline, 1px specular top edge present at rest, real offset shadow.",
+      "html": "<div class=\"ds-plane\"><h3 class=\"ds-plane-title\">Project title</h3><p class=\"ds-plane-body\">A production system shipped end to end — architecture, frontend, backend, infrastructure, and release.</p></div>",
+      "css": ".ds-plane { --lx: 30%; --ly: 0%; --lit: 0; position: relative; isolation: isolate; background: var(--surface, #16161a); border: 1px solid rgba(255,255,255,0.085); border-radius: 14px; padding: 1.375rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.07), 0 1px 2px rgba(0,0,0,0.55), 0 10px 26px -14px rgba(0,0,0,0.9); transition: background-color 0.4s cubic-bezier(0.16,1,0.3,1), border-color 0.4s cubic-bezier(0.16,1,0.3,1); } .ds-plane::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding-block-start: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,calc(0.16 + 0.44 * var(--lit))) var(--lx), transparent); -webkit-mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); pointer-events: none; z-index: 4; transition: background 0.5s cubic-bezier(0.16,1,0.3,1); } .ds-plane::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(22rem circle at var(--lx) var(--ly), rgba(255,255,255,0.07), transparent 72%); opacity: var(--lit); pointer-events: none; z-index: 3; transition: opacity 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-plane > * { position: relative; z-index: 1; } .ds-plane:hover { background: #1f1f26; border-color: rgba(255,255,255,0.16); --lit: 1; } .ds-plane-title { font-family: var(--sans, 'Geist Variable', ui-sans-serif, system-ui, sans-serif); font-size: 1.0625rem; font-weight: 560; line-height: 1.35; letter-spacing: -0.015em; color: #f4f4f5; margin: 0 0 0.625rem; } .ds-plane-body { font-family: var(--sans, 'Geist Variable', ui-sans-serif, system-ui, sans-serif); font-size: 0.875rem; line-height: 1.7; color: #a5a5ae; max-width: 62ch; margin: 0; }"
+    },
+    {
+      "name": "Plane (raised tier)",
+      "kind": "card",
+      "refersTo": "plane-raised",
+      "description": "The focal tier — brighter lit edge, deeper cast. Reserved for the hero portrait mount and the contact close block.",
+      "html": "<div class=\"ds-plane-raised\"><h2 class=\"ds-close-h\">Building something that has to work at scale?</h2><a class=\"ds-address\" href=\"#\">gkshuvo24@gmail.com</a></div>",
+      "css": ".ds-plane-raised { --lx: 30%; --ly: 0%; --lit: 0; position: relative; isolation: isolate; background: #1c1c22; border: 1px solid rgba(255,255,255,0.085); border-radius: 14px; padding: clamp(2.5rem, 6vw, 4.5rem); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 2px 4px rgba(0,0,0,0.55), 0 22px 50px -22px rgba(0,0,0,1); } .ds-plane-raised::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding-block-start: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,calc(0.16 + 0.44 * var(--lit))) var(--lx), transparent); -webkit-mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); pointer-events: none; z-index: 4; } .ds-plane-raised:hover { --lit: 1; } .ds-plane-raised > * { position: relative; z-index: 1; } .ds-close-h { font-family: var(--sans, 'Geist Variable', ui-sans-serif, system-ui, sans-serif); font-size: clamp(1.6rem, 3.4vw, 2.35rem); font-weight: 560; line-height: 1.1; letter-spacing: -0.03em; text-wrap: balance; max-width: 20ch; color: #f4f4f5; margin: 0 0 1.25rem; } .ds-address { display: inline-block; font-family: var(--sans, 'Geist Variable', ui-sans-serif, system-ui, sans-serif); font-size: clamp(1.25rem, 3vw, 2rem); font-weight: 500; letter-spacing: -0.03em; color: #f4f4f5; text-decoration: none; border-block-end: 1px solid rgba(255,255,255,0.16); padding-block-end: 0.25rem; transition: border-color 0.3s cubic-bezier(0.16,1,0.3,1); } .ds-address:hover { border-color: #f4f4f5; } .ds-address:focus-visible { outline: 2px solid #f4f4f5; outline-offset: 3px; }"
+    },
+    {
+      "name": "Plane (sunken tier)",
+      "kind": "card",
+      "refersTo": "plane-sunken",
+      "description": "A shallow well for a set-aside block. Sits just above the ground so it still registers as content; no specular sweep, no hover response.",
+      "html": "<aside class=\"ds-plane-sunken\"><h3 class=\"ds-plane-title\">Highlight</h3><p class=\"ds-plane-body\">The set-aside case: recessed, but never below the ground.</p></aside>",
+      "css": ".ds-plane-sunken { position: relative; background: #0d0d11; border: 1px solid rgba(255,255,255,0.055); border-radius: 14px; padding: clamp(1.75rem, 3.5vw, 2.5rem); box-shadow: inset 0 1px 3px rgba(0,0,0,0.85), inset 0 -1px 0 rgba(255,255,255,0.045); } .ds-plane-sunken .ds-plane-title { font-family: var(--sans, 'Geist Variable', ui-sans-serif, system-ui, sans-serif); font-size: 1.1875rem; font-weight: 560; line-height: 1.35; letter-spacing: -0.015em; color: #f4f4f5; margin: 0 0 0.75rem; } .ds-plane-sunken .ds-plane-body { font-family: var(--sans, 'Geist Variable', ui-sans-serif, system-ui, sans-serif); font-size: 0.9375rem; line-height: 1.7; color: #a5a5ae; max-width: 62ch; margin: 0; }"
+    },
+    {
+      "name": "Portrait Mount",
+      "kind": "custom",
+      "refersTo": "portrait-mount",
+      "description": "A raised plane used as a mount, not a crop: 7px of plane surface shows around a 4/5 frame well clipped at the concentric 8px inner radius. Frames cross-fade; the cycle is a bounded, fenced exception to the one-motion rule and does nothing with a single photograph.",
+      "html": "<figure class=\"ds-portrait\"><div class=\"ds-frames\"><img class=\"ds-shot is-active\" src=\"\" alt=\"Golam Kibria\"/></div></figure>",
+      "css": ".ds-portrait { --lx: 30%; --ly: 0%; --lit: 0; position: relative; isolation: isolate; margin: 0; aspect-ratio: 4 / 5; padding: 7px; background: #1c1c22; border: 1px solid rgba(255,255,255,0.085); border-radius: 14px; box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 2px 4px rgba(0,0,0,0.55), 0 22px 50px -22px rgba(0,0,0,1); } .ds-portrait::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(22rem circle at var(--lx) var(--ly), rgba(255,255,255,0.07), transparent 72%); opacity: var(--lit); mix-blend-mode: soft-light; pointer-events: none; z-index: 5; transition: opacity 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-portrait:hover { --lit: 1; } .ds-frames { position: relative; width: 100%; height: 100%; border-radius: 8px; overflow: hidden; } .ds-shot { position: absolute; inset: 0; width: 100%; height: auto; min-height: 100%; object-fit: cover; object-position: center 22%; filter: grayscale(0.5) contrast(1.05) brightness(1.02); opacity: 0; transition: opacity 1.4s cubic-bezier(0.16,1,0.3,1), filter 0.6s cubic-bezier(0.16,1,0.3,1); } .ds-shot.is-active { opacity: 1; } .ds-portrait:hover .ds-shot { filter: grayscale(0) contrast(1.02) brightness(1); } @media (prefers-reduced-motion: reduce) { .ds-shot { transition: none; } } @media (max-width: 900px) { .ds-portrait { max-width: none; } }"
+    },
+    {
+      "name": "Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "A factual stack chip. Non-interactive, never coloured, never a filter — it is the data.",
+      "html": "<ul class=\"ds-tags\"><li class=\"ds-tag\">Django</li><li class=\"ds-tag\">React</li><li class=\"ds-tag\">PostgreSQL</li><li class=\"ds-tag\">AWS</li></ul>",
+      "css": ".ds-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.375rem; margin: 0; padding: 0; } .ds-tag { font-family: var(--sans, 'Geist Variable', ui-sans-serif, system-ui, sans-serif); font-size: 0.75rem; line-height: 1; letter-spacing: 0.005em; color: #85858f; padding: 0.375rem 0.5rem; border: 1px solid rgba(255,255,255,0.085); border-radius: 6px; background: rgba(255,255,255,0.018); white-space: nowrap; }"
+    },
+    {
+      "name": "Section Head",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Opens every section: heading at one end, a mono meta or sans label at the other, closed by a hairline. Never an eyebrow above.",
+      "html": "<div class=\"ds-section-head\"><h2 class=\"ds-h2\">Independent work</h2><p class=\"ds-meta\">6 projects &middot; source on GitHub</p></div>",
+      "css": ".ds-section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.75rem 2rem; padding-block-end: 2.25rem; border-block-end: 1px solid rgba(255,255,255,0.085); margin-block-end: 2.5rem; } .ds-h2 { font-family: var(--sans, 'Geist Variable', ui-sans-serif, system-ui, sans-serif); font-size: clamp(1.6rem, 3.4vw, 2.35rem); font-weight: 560; line-height: 1.1; letter-spacing: -0.03em; text-wrap: balance; color: #f4f4f5; margin: 0; } .ds-meta { font-family: var(--mono, 'Geist Mono Variable', ui-monospace, Menlo, monospace); font-size: 0.75rem; font-weight: 450; letter-spacing: 0.02em; color: #85858f; font-variant-numeric: tabular-nums; margin: 0; }"
+    },
+    {
+      "name": "Live Status",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The page's only chromatic authored element: a 7px green dot with a breathing ring, meaning available. Functional, never decorative. Set at body-sm.",
+      "html": "<p class=\"ds-status\"><span class=\"ds-dot\" aria-hidden=\"true\"></span>Open to full-time roles and freelance work</p>",
+      "css": ".ds-status { display: inline-flex; align-items: center; gap: 0.5625rem; font-family: var(--sans, 'Geist Variable', ui-sans-serif, system-ui, sans-serif); font-size: 0.875rem; color: #a5a5ae; margin: 0; } .ds-dot { position: relative; width: 7px; height: 7px; border-radius: 50%; background: #4ade80; flex: none; } .ds-dot::after { content: ''; position: absolute; inset: -3px; border-radius: 50%; border: 1px solid #4ade80; opacity: 0.45; animation: ds-breathe 2.8s cubic-bezier(0.16,1,0.3,1) infinite; } @keyframes ds-breathe { 0%, 100% { transform: scale(1); opacity: 0.45; } 50% { transform: scale(1.5); opacity: 0; } } @media (prefers-reduced-motion: reduce) { .ds-dot::after { animation: none; } }"
+    },
+    {
+      "name": "Address Link",
+      "kind": "custom",
+      "refersTo": "address-link",
+      "description": "The terminal call of the contact plane — the only link above control size. Underscored by a real 1px rule that goes to full bone on hover.",
+      "html": "<a class=\"ds-address-link\" href=\"mailto:gkshuvo24@gmail.com\">gkshuvo24@gmail.com</a>",
+      "css": ".ds-address-link { display: inline-block; font-family: var(--sans, 'Geist Variable', ui-sans-serif, system-ui, sans-serif); font-size: clamp(1.25rem, 3vw, 2rem); font-weight: 500; letter-spacing: -0.03em; color: #f4f4f5; text-decoration: none; border-block-end: 1px solid rgba(255,255,255,0.16); padding-block-end: 0.25rem; transition: border-color 0.3s cubic-bezier(0.16,1,0.3,1); } .ds-address-link:hover { border-color: #f4f4f5; } .ds-address-link:focus-visible { outline: 2px solid #f4f4f5; outline-offset: 3px; } @media (prefers-reduced-motion: reduce) { .ds-address-link { transition: none; } }"
+    },
+    {
+      "name": "Footer Nav",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "The page's only navigation: three text destinations in the colophon at body-sm, secondary ink to bone on hover, no underline at rest.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Elsewhere\"><a href=\"#\">GitHub</a><a href=\"#\">LinkedIn</a><a href=\"#\">Email</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 1.5rem; } .ds-nav a { font-family: var(--sans, 'Geist Variable', ui-sans-serif, system-ui, sans-serif); font-size: 0.875rem; color: #a5a5ae; text-decoration: none; transition: color 0.25s cubic-bezier(0.16,1,0.3,1); } .ds-nav a:hover { color: #f4f4f5; } .ds-nav a:focus-visible { outline: 2px solid #f4f4f5; outline-offset: 3px; border-radius: 3px; }"
+    },
+    {
+      "name": "Grain",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The fixed full-viewport noise that gives the black a surface. Plain alpha at 0.05 — never mix-blend-mode: overlay.",
+      "html": "<div class=\"ds-grain\" aria-hidden=\"true\"></div>",
+      "css": ".ds-grain { position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: 0.05; background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E\"); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Lit Slab",
+    "overview": "A near-black room with one light in it. Every surface on this page is the same material — a cool, slightly-blue graphite that has been given a fine grain so it reads as a physical thing rather than a filled rectangle — and every raised piece of that material catches the same light source falling from the upper left. Depth is the entire expressive budget. There is no accent colour, no gradient, no illustration, no decorative rule. The photographs — one portrait and six work covers, all desaturated toward the page's own greyscale — plus one 7px green dot carry all the chroma; the green is functional, it means available.\n\nThe density is that of a specification sheet read at arm's length: generous vertical air between sections, tight leading inside a block, a hairline rule under every section heading, and text that never exceeds 62–68 characters. Nothing animates on load. The page is fully legible before a single script runs, and the page's signature motion is a light that moves when a fine pointer moves — and that light is already present, at rest, on every device that has no pointer at all.\n\nThe rejected references are explicit and were rejected at the world-choice: the expressive concept portfolio (full-bleed type experiments, scroll-jacking, a palette that competes with the work) and the generic dev template (card grids with coloured category chips, gradient hero, an eyebrow above every heading). This world refuses both by having exactly one component language and using it everywhere.",
+    "keyCharacteristics": [
+      "Greyscale-only, with a single functional green as the sole chromatic exception",
+      "One material, three elevation tiers: sunken, base, raised",
+      "A raking specular that exists at rest and is merely moved by the pointer",
+      "Grain over the entire viewport, plain alpha, measured by pixel variance",
+      "Sans for names and categories, mono strictly for numbers and dates",
+      "Pill controls against 14px-radius planes; no other shapes"
+    ],
+    "rules": [
+      { "name": "The Work Is The Colour Rule", "body": "No authored hue may enter the page. Chroma comes from photographs and from the one live-status dot. If a new surface needs to signal something, it signals it with elevation, ink weight, or a hairline — never a hue.", "section": "colors" },
+      { "name": "The Shadow Needs Somewhere To Fall Rule", "body": "The ground is #0b0b0e, not true black. Any future darkening of the ground must be checked against the raised plane's shadow: if the shadow stops resolving, the ground has gone too dark and the whole elevation system silently collapses to flat.", "section": "colors" },
+      { "name": "The Mono Is A Ruler Rule", "body": "`.meta` (mono) is for measurement: dates, durations, counts, tabular data. `.label` (sans) carries category names, kinds, and summaries. Mono on a category name is costume; it was introduced and removed twice and must not come back.", "section": "typography" },
+      { "name": "The No Eyebrow Rule", "body": "No kicker, eyebrow, or small dim line above a larger heavier one — anywhere, at any size, even when the small line is a complete sentence. A skimmer reads the pair as one unit and the top line is lost. Categories go beside or beneath, never above. The role line is the test case: it is exactly the shape a kicker would take, and it is set under the name for that reason.", "section": "typography" },
+      { "name": "The One Display Rule", "body": "Exactly one element on the page uses display scale. A second display-scale element on a new surface means one of them is not the subject.", "section": "typography" },
+      { "name": "The Gutter Floor Rule", "body": "--gutter is clamp(1.5rem, 5vw, 6rem). The 5vw term computes to only 19.5px at 390px, so on every phone the floor is the only term doing any work — it is the mobile margin, not a safety net. 24px is the floor; 20px put section content on the edge of the screen. Judge any change to this token at 390px, never at desktop.", "section": "layout" },
+      { "name": "The Gap-Not-Rules Rule", "body": "Lists of inline items — the hero domain list, the stack rows — separate with column-gap 1.5rem and row-gap 0.4375rem. Never border-inline-end: a wrapping list strands a dangling separator at the end of every wrapped line.", "section": "layout" },
+      { "name": "The No Orphan Rule", "body": "A wrapping list of an odd count is constrained until it breaks evenly. The hero's seven domains are capped at 32rem to force a 4/3 break, and below 640px switch to two balanced columns, which break 4/3 by construction at any font size.", "section": "layout" },
+      { "name": "The Light Exists At Rest Rule", "body": "--lx: 30% and --ly: 0% are defaults, not placeholders. Every plane renders a raking specular from the upper left with no pointer present — on touch devices, on keyboard-only, and under prefers-reduced-motion. raking-light.ts only moves a light that is already there. Making the highlight hover-only leaves every phone flat and kills the world.", "section": "elevation" },
+      { "name": "The Three Tiers Rule", "body": "Sunken, base, raised. The sunken tier sits above the ground (#0d0d11 over #0b0b0e), never below it — below the ground it reads as a seam in the page rather than as content. A fourth tier means the hierarchy has stopped being legible and needs editing, not another shadow.", "section": "elevation" },
+      { "name": "The Measured Grain Rule", "body": "The full-viewport grain is fractal-noise SVG at plain alpha 0.05. It must never use mix-blend-mode: overlay: overlay against a ground this dark returns ~2 × base × blend and annihilates the noise no matter how high the opacity reads. Judge the grain by measured luma variance on empty ground (6–8 levels is correct; 1 means it is gone), never by the opacity number.", "section": "elevation" },
+      { "name": "The Concentric Inset Rule", "body": "A radius nested inside a plane is the plane's radius minus its mount, declared as a literal token (--radius-inner: 8px inside a 7px mount), not as an inline calc(). The literal keeps the pair auditable by every tool that reads the stylesheet; a calc() hides the relationship from all of them.", "section": "shapes" },
+      { "name": "The Intrinsic Height Rule", "body": "Astro's <Image> emits intrinsic width/height attributes, so any element given an aspect-ratio must also set height: auto or the attribute silently wins and the ratio is ignored. Every constrained image in this build carries both.", "section": "shapes" },
+      { "name": "The Shared Framing Rule", "body": "The portrait mount is fixed and every frame is cropped object-fit: cover at object-position: center 22%. Frames must therefore share similar framing — same subject scale, same eye line — or the cross-fade reads as a jump cut instead of as the same material breathing.", "section": "components" }
+    ],
+    "dos": [
+      "Do place any new surface at one of the three existing tiers — sunken, base, or raised — and give it the plane's border, radius, specular edge, and shadow unchanged.",
+      "Do keep the raking light present at rest: --lx: 30% / --ly: 0% are load-bearing defaults, and every new plane must look lit with no pointer and under prefers-reduced-motion.",
+      "Do use .meta (mono, tabular) for dates, counts, durations, and locations, and .label (sans) for every category name, kind, and summary.",
+      "Do separate wrapping inline lists with gap only, and constrain the list width so an odd count breaks evenly instead of stranding its last item.",
+      "Do pair aspect-ratio with height: auto on any Astro <Image>, or the emitted intrinsic height wins silently.",
+      "Do judge the gutter at 390px, where 5vw is only 19.5px and the 1.5rem floor is the entire mobile margin.",
+      "Do declare a nested radius as a literal token concentric with its mount (--radius-inner: 8px inside 7px), not as an inline calc().",
+      "Do judge the grain by measured pixel variance on empty ground, not by its opacity value.",
+      "Do give every interactive element a reduced-motion branch that disables transforms and transitions, as every component here already does.",
+      "Do keep body measure at 62ch and lede measure at 68ch.",
+      "Do fence any idle motion the way the portrait cycle is fenced — reduced-motion exit, off-screen pause, background-tab pause — and only when the user has asked for it by name."
+    ],
+    "donts": [
+      "Don't introduce a hue. No accent, no gradient, no coloured chip, no coloured border. The green dot is a status indicator at 7px and stays the only authored chroma.",
+      "Don't put a small dim line above a heading. No kickers, no eyebrows, no all-caps category strips — at any size, even when the line is a full sentence.",
+      "Don't set mix-blend-mode: overlay on the grain; against this ground it cancels the noise regardless of opacity.",
+      "Don't drop the sunken tier below the ground colour. It must sit above #0b0b0e or it reads as a seam rather than as content.",
+      "Don't darken the ground toward true black. At #09090b the offset shadows stop resolving and the whole elevation system flattens.",
+      "Don't use border-inline-end as a list separator anywhere.",
+      "Don't set a category name, a heading, or a person's name in mono.",
+      "Don't add a fourth elevation tier, a second display-scale element, or a second primary button in one view.",
+      "Don't treat the portrait cross-fade as licence for a second ambient animation. It is one bounded exception; the page's signature motion is still the raking light.",
+      "Don't mix portrait frames of different crops or subject scales — the fixed mount and object-position: center 22% turn a framing change into a jump cut.",
+      "Don't animate anything on load. The page must be complete and legible before any script runs."
+    ]
+  }
+}

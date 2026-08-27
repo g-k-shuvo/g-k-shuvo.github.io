@@ -1,0 +1,40 @@
+{
+	"groups": [
+		{
+			"label": "Front-end",
+			"items": ["React", "Vue", "TypeScript", "Tailwind CSS", "Redux"]
+		},
+		{
+			"label": "Back-end",
+			"items": ["Django", "Node.js", "Python", ".NET", "GraphQL", "REST APIs"]
+		},
+		{
+			"label": "Data",
+			"items": ["PostgreSQL", "MongoDB", "DynamoDB", "Snowflake", "Redis"]
+		},
+		{
+			"label": "Infrastructure",
+			"items": ["AWS", "Google Cloud", "Azure", "Docker", "Jenkins", "NGINX", "Firebase"]
+		},
+		{
+			"label": "AI",
+			"items": [
+				"RAG pipelines",
+				"Vector databases",
+				"Embedding pipelines",
+				"LLM integration",
+				"LangChain"
+			]
+		}
+	],
+	"education": [
+		{
+			"title": "BSc in Computer Science & Engineering",
+			"issuer": "Metropolitan University"
+		},
+		{
+			"title": "Google Cloud Developer Certification",
+			"issuer": "Google Cloud Platform"
+		}
+	]
+}

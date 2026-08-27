@@ -1,47 +1,70 @@
-# <img src="banner.jpg" align="center" alt="banner"/>
+# g-k-shuvo.github.io
 
-Source code for my personal portfolio, musabhassan.com
+Personal site of **Golam Kibria** — software engineer.
 
-[![Visit Live Site](https://img.shields.io/badge/Visit%20Live%20Site-222224?style=for-the-badge)](https://musabhassan.com)
+Single static page: who I am, the enterprise work I've shipped at Techjays, my
+independent projects, and how to reach me.
 
-### Source Information
+**Live:** https://g-k-shuvo.github.io
 
-This website is built with
+## Built with
 
-- [SvelteKit (Frontend Framework)](https://kit.svelte.dev/)
-- [Slickscroll (Scroll Effects)](https://github.com/Musab-Hassan/slickscrolljs)
-- [Anime (Animations)](https://github.com/juliangarnier/anime)
-- [Three.js (3D Effects)](https://github.com/mrdoob/three.js/)
-- [Firebase (Hosting)](https://firebase.google.com/docs/hosting)
+- [Astro](https://astro.build/) — static output, zero JavaScript by default
+- [Geist](https://vercel.com/font) — self-hosted variable Sans and Mono
+- [Playwright](https://playwright.dev/) — viewport captures for design review
 
-This is the source for version 2+. Version 1.0, the one built with jQuery is in the [v1 branch](https://github.com/Musab-Hassan/musabhassan.com/tree/v1).
+No UI framework, no CSS framework, no client-side router. The only script that
+ships is ~1KB of pointer tracking for the raked-light effect on raised
+surfaces, inlined into the document and skipped entirely on touch devices and
+under `prefers-reduced-motion`.
 
-### Developing
-
-The site is just a regular SvelteKit project, with ssr disabled.
-
-For development, start the vite development server:
+## Develop
 
 ```bash
-npm run dev
+npm install
+npm run dev        # dev server
+npm run build      # static build → dist/
+npm run preview    # serve the build
+npm run check      # astro check
+npm run shots      # capture desktop + mobile into .impeccable/review/
 ```
 
-*Note: Due to migration from Rollup, HMR breaks the site. You have to do a full reload if you modify any components or TS files.*
+## Content
 
-For production, build the site:
+Page content lives in JSON, separate from markup:
 
-```bash
-npm run build
-```
+| File | Holds |
+| --- | --- |
+| `src/data/site.json` | availability, contact links |
+| `src/data/experience.json` | Techjays role and the projects delivered there |
+| `src/data/work.json` | independent / open-source projects |
+| `src/data/stack.json` | grouped stack, education, certification |
 
-### Contributing
+Images in `src/assets/` are optimised to WebP at build time. Anything in
+`public/` ships as-is.
 
-You can fork this repo and modify it however I wont really be accepting pull requests due to the nature of the website being based on "taste" and a showcase of my work.
+## Deploy
 
-If you decide to use this site for your own commercial work, replace my personal logos with yours.
+Pushing to `gh-pages` triggers `.github/workflows/deploy.yml`, which builds and
+publishes `dist/` to GitHub Pages.
 
-Please don't use my personal logos as yours.
+## Design record
 
-### License
+`PRODUCT.md` holds durable product truth — audience, positioning, evidence, and
+what future work must not fabricate. `DESIGN.md` records the visual system as
+built.
 
-Mozilla Public License 2.0 License.
+## Credits
+
+Versions 1–3 of this site were built on
+[musabhassan.com](https://github.com/Musab-Hassan/musabhassan.com) by
+**Musab Hassan**, used under the Mozilla Public License 2.0. Version 4 is a
+full rewrite — new stack, new design system, no assets or identity marks
+retained from that project. The MPL-2.0 licence is carried forward in
+`LICENSE`.
+
+## Licence
+
+Mozilla Public License 2.0. The content, copy, photographs, and project
+descriptions are mine and are not covered by that grant — please don't reuse
+them as your own.

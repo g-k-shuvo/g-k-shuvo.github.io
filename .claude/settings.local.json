@@ -14,7 +14,11 @@
       "Bash(cp C:/Users/KIBRIA/Downloads/iloveimg-compressed/flairy.png D:/Personal_Projects/g-k-shuvo.github.io/static/assets/imgs/work-back/flairy/cover.jpg)",
       "Bash(cp C:/Users/KIBRIA/Downloads/iloveimg-compressed/artify.png D:/Personal_Projects/g-k-shuvo.github.io/static/assets/imgs/work-back/artifynow/cover.jpg)",
       "Bash(cp C:/Users/KIBRIA/Downloads/iloveimg-compressed/youtube-offer-finder.png D:/Personal_Projects/g-k-shuvo.github.io/static/assets/imgs/work-back/youtube-offer-finder/cover.jpg)",
-      "Bash(cp C:/Users/KIBRIA/Downloads/iloveimg-compressed/bloggify.png D:/Personal_Projects/g-k-shuvo.github.io/static/assets/imgs/work-back/bloggify/cover.jpg)"
+      "Bash(cp C:/Users/KIBRIA/Downloads/iloveimg-compressed/bloggify.png D:/Personal_Projects/g-k-shuvo.github.io/static/assets/imgs/work-back/bloggify/cover.jpg)",
+      "Bash(gh run:*)",
+      "Bash(npx playwright:*)",
+      "Bash(rm \"static/assets/imgs/1home-back.jpg\" \"static/assets/imgs/2home-back.jpg\" \"static/assets/imgs/3home-back.jpg\" \"static/assets/imgs/signature-white.png\" \"static/favicon.ico\")",
+      "Bash(rm -rf test-results/)"
     ]
   }
 }

@@ -1,0 +1,120 @@
+---
+import Mark from './Mark.astro';
+import site from '../data/site.json';
+
+const year = new Date().getFullYear();
+---
+
+<footer id="contact">
+	<div class="shell">
+		<div class="close plane plane--raised">
+			<h2>
+				Tell me what you're building.
+			</h2>
+			<p class="lede">
+				{site.availability}. Based in {site.location}, three years remote with a
+				US team.
+			</p>
+			<a class="address" href={`mailto:${site.email}`}>{site.email}</a>
+		</div>
+
+		<div class="colophon">
+			<a class="brand" href="#top" aria-label="Back to top">
+				<Mark size={18} />
+			</a>
+
+			<nav aria-label="Elsewhere">
+				<a href={site.github} target="_blank" rel="me noreferrer">GitHub</a>
+				<a href={site.linkedin} target="_blank" rel="me noreferrer">LinkedIn</a>
+				<a href={`mailto:${site.email}`}>Email</a>
+			</nav>
+
+			<p class="label">&copy; {year} Golam Kibria</p>
+		</div>
+	</div>
+</footer>
+
+<style>
+	footer {
+		padding-block-start: clamp(6rem, 12vh, 9.5rem);
+		padding-block-end: 2.5rem;
+	}
+
+	.close {
+		padding: clamp(2.5rem, 6vw, 4.5rem);
+		text-align: start;
+	}
+
+	.close h2 {
+		max-width: 20ch;
+		margin-block-end: 1.25rem;
+	}
+
+	.close .lede {
+		margin-block-end: 2.25rem;
+	}
+
+	.address {
+		display: inline-block;
+		font-size: clamp(1.25rem, 3vw, 2rem);
+		font-weight: 500;
+		letter-spacing: -0.03em;
+		color: var(--ink);
+		text-decoration: none;
+		border-block-end: 1px solid var(--line-strong);
+		padding-block-end: 0.25rem;
+		transition: border-color 0.3s var(--ease);
+	}
+
+	.address:hover {
+		border-color: var(--ink);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.address {
+			transition: none;
+		}
+	}
+
+	.colophon {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1.25rem 2rem;
+		margin-block-start: clamp(3rem, 7vh, 5rem);
+		padding-block-start: 1.75rem;
+		border-block-start: 1px solid var(--line);
+	}
+
+	.brand {
+		display: inline-flex;
+		color: var(--ink-3);
+		transition: color 0.3s var(--ease);
+	}
+
+	.brand:hover {
+		color: var(--ink);
+	}
+
+	nav {
+		display: flex;
+		gap: 1.5rem;
+	}
+
+	nav a {
+		font-size: 0.875rem;
+		color: var(--ink-2);
+		text-decoration: none;
+	}
+
+	nav a:hover {
+		color: var(--ink);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.brand {
+			transition: none;
+		}
+	}
+</style>
