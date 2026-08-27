@@ -22,7 +22,10 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      # Not `npm ci`: the lockfile is generated on Windows and records only the
+      # win32 optional binaries for rollup and sharp, so a clean install on
+      # Linux cannot resolve @rollup/rollup-linux-x64-gnu.
+      - run: npm install --no-audit --no-fund
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
