@@ -235,6 +235,10 @@ h3 {
 section {
 	/* Sections breathe from above; headings own the space over them. */
 	padding-block-start: clamp(6rem, 12vh, 9.5rem);
+	/* Layout containment scopes a reflow to the section that caused it. The
+	   page is ~10,000px tall on a phone, and a webfont swapping in relaid the
+	   whole of it; this keeps that work local. No visual effect. */
+	contain: layout style;
 }
 
 .section-head {
