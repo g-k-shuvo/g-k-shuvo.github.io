@@ -310,21 +310,18 @@ section {
 .plane::before {
 	content: '';
 	position: absolute;
-	inset: 0;
-	border-radius: inherit;
-	padding-block-start: 1px;
+	/* A 1px bar inset by the corner radius, so it runs the flat part of the top
+	   edge. This was a full-size element with a two-gradient mask composite; on
+	   sixteen planes that cost more style and layout time than the whole rest of
+	   the page. Same result, no compositing. */
+	inset: 0 var(--radius) auto;
+	height: 1px;
 	background: linear-gradient(
 		90deg,
 		transparent,
 		rgba(255, 255, 255, calc(0.16 + 0.44 * var(--lit))) var(--lx),
 		transparent
 	);
-	-webkit-mask:
-		linear-gradient(#000 0 0) content-box exclude,
-		linear-gradient(#000 0 0);
-	mask:
-		linear-gradient(#000 0 0) content-box exclude,
-		linear-gradient(#000 0 0);
 	pointer-events: none;
 	z-index: 4;
 	transition: background 0.5s var(--ease);

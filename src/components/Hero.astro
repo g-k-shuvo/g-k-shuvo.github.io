@@ -68,11 +68,16 @@ const shots = Object.entries(
 								alt={i === 0 ? 'Golam Kibria' : ''}
 								class:list={['shot', { 'is-active': i === 0 }]}
 								data-shot
-								widths={[380, 560, 760]}
+								widths={[320, 420, 560, 700]}
 								sizes="(max-width: 900px) 88vw, 26rem"
-								quality={82}
+								width={700}
+								height={875}
+								fit="cover"
+								position="top"
+								quality={58}
 								loading={i === 0 ? 'eager' : 'lazy'}
 								fetchpriority={i === 0 ? 'high' : 'auto'}
+								decoding={i === 0 ? 'sync' : 'async'}
 							/>
 						))
 					}

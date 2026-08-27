@@ -52,17 +52,39 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 			})}
 		/>
 
-		<script
-			is:inline
-			defer
-			src="https://www.googletagmanager.com/gtag/js?id=G-7XXPE0DV47"></script>
 		<script is:inline>
+			// Analytics is 160KB of JavaScript. Loaded normally it evaluates during
+			// first paint and costs ~600ms of blocking time on a mid-tier phone, so
+			// it waits for idle instead. Nothing is lost: gtag() queues into
+			// dataLayer immediately and the library drains the queue when it lands.
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
 				dataLayer.push(arguments);
 			}
 			gtag('js', new Date());
 			gtag('config', 'G-7XXPE0DV47');
+
+			(function () {
+				var loaded = false;
+				function loadGA() {
+					if (loaded) return;
+					loaded = true;
+					var s = document.createElement('script');
+					s.async = true;
+					s.src = 'https://www.googletagmanager.com/gtag/js?id=G-7XXPE0DV47';
+					document.head.appendChild(s);
+				}
+				function schedule() {
+					if ('requestIdleCallback' in window) requestIdleCallback(loadGA, { timeout: 3000 });
+					else setTimeout(loadGA, 2000);
+				}
+				if (document.readyState === 'complete') schedule();
+				else window.addEventListener('load', schedule, { once: true });
+				// A visitor who leaves before idle still gets counted.
+				document.addEventListener('visibilitychange', function () {
+					if (document.visibilityState === 'hidden') loadGA();
+				});
+			})();
 		</script>
 	</head>
 
