@@ -11,6 +11,8 @@ interface Props {
 
 const { title, description } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
+// Absolute, as crawlers require — a relative og:image is silently ignored.
+const ogImage = new URL('/og.jpg', Astro.site).href;
 ---
 
 <!doctype html>
@@ -31,29 +33,76 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 			content="Golam Kibria, software engineer, full stack developer, Django, React, Vue, Node.js, AWS, GCP, RAG, machine learning, Bangladesh, remote"
 		/>
 
-		<meta property="og:type" content="website" />
+		<meta property="og:type" content="profile" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={canonical} />
+		<meta property="og:site_name" content="Golam Kibria" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:secure_url" content={ogImage} />
+		<meta property="og:image:type" content="image/jpeg" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Golam Kibria — Software Engineer" />
+		<meta property="profile:first_name" content="Golam" />
+		<meta property="profile:last_name" content="Kibria" />
+
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+		<meta name="twitter:image:alt" content="Golam Kibria — Software Engineer" />
 
 		<script
 			type="application/ld+json"
 			is:inline
-			set:html={JSON.stringify({
-				'@context': 'https://schema.org',
-				'@type': 'Person',
-				name: 'Golam Kibria',
-				jobTitle: 'Software Engineer',
-				url: 'https://g-k-shuvo.github.io',
-				email: 'mailto:gkshuvo24@gmail.com',
-				worksFor: { '@type': 'Organization', name: 'Techjays' },
-				alumniOf: { '@type': 'CollegeOrUniversity', name: 'Metropolitan University' },
-				address: { '@type': 'PostalAddress', addressCountry: 'BD' },
-				sameAs: ['https://github.com/g-k-shuvo', 'https://www.linkedin.com/in/g-k-shuvo/']
-			})}
+			set:html={JSON.stringify([
+				{
+					'@context': 'https://schema.org',
+					'@type': 'Person',
+					'@id': 'https://g-k-shuvo.github.io/#person',
+					name: 'Golam Kibria',
+					givenName: 'Golam',
+					familyName: 'Kibria',
+					jobTitle: 'Software Engineer',
+					description,
+					url: 'https://g-k-shuvo.github.io/',
+					image: ogImage,
+					email: 'mailto:gkshuvo24@gmail.com',
+					worksFor: { '@type': 'Organization', name: 'Techjays' },
+					alumniOf: {
+						'@type': 'CollegeOrUniversity',
+						name: 'Metropolitan University'
+					},
+					address: { '@type': 'PostalAddress', addressCountry: 'BD' },
+					knowsAbout: [
+						'Full-stack web development',
+						'Django',
+						'React',
+						'Vue',
+						'Node.js',
+						'Python',
+						'PostgreSQL',
+						'Amazon Web Services',
+						'Google Cloud Platform',
+						'Docker',
+						'Retrieval-augmented generation',
+						'Machine learning integration'
+					],
+					sameAs: ['https://github.com/g-k-shuvo', 'https://www.linkedin.com/in/g-k-shuvo/']
+				},
+				{
+					'@context': 'https://schema.org',
+					'@type': 'WebSite',
+					'@id': 'https://g-k-shuvo.github.io/#website',
+					url: 'https://g-k-shuvo.github.io/',
+					name: 'Golam Kibria',
+					description,
+					inLanguage: 'en',
+					author: { '@id': 'https://g-k-shuvo.github.io/#person' }
+				}
+			])}
 		/>
 
 		<script is:inline>

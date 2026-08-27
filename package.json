@@ -11,7 +11,8 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"check": "astro check",
-		"shots": "playwright test"
+		"shots": "playwright test",
+		"og": "node scripts/make-og.mjs"
 	},
 	"dependencies": {
 		"@fontsource-variable/geist": "^5.2.5",
