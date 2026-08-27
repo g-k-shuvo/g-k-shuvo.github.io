@@ -54,15 +54,6 @@ publishes `dist/` to GitHub Pages.
 what future work must not fabricate. `DESIGN.md` records the visual system as
 built.
 
-## Credits
-
-Versions 1–3 of this site were built on
-[musabhassan.com](https://github.com/Musab-Hassan/musabhassan.com) by
-**Musab Hassan**, used under the Mozilla Public License 2.0. Version 4 is a
-full rewrite — new stack, new design system, no assets or identity marks
-retained from that project. The MPL-2.0 licence is carried forward in
-`LICENSE`.
-
 ## Licence
 
 Mozilla Public License 2.0. The content, copy, photographs, and project
