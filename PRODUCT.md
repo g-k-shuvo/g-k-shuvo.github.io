@@ -60,12 +60,15 @@ The site is a single destination reached from LinkedIn, GitHub, or a job applica
 - GitHub: `https://github.com/g-k-shuvo`
 - LinkedIn: `https://www.linkedin.com/in/g-k-shuvo/`
 
-**No inherited marks.** The current codebase is a fork of Musab Hassan's `musabhassan.com`. The following are that author's identity, not Golam's, and are confirmed for removal:
-- `static/assets/imgs/logo.svg` — an "MH" monogram (footer alt text reads `"mh logo"`)
-- the hand-signature SVG paths duplicated in `home.svelte` and `footer.svelte`
-- `README.md`, which still describes the site as `musabhassan.com` and credits Firebase hosting
+**The gK monogram is Golam's own mark and must be preserved.** A lowercase `g` whose bowl interlocks with a `K` sharing its stem. It ships in `src/components/Mark.astro` and in the favicon, and it is not to be redrawn.
 
-A new mark derived from Golam's own initials replaces the monogram. The original template's license (MPL 2.0) and authorship are to be credited correctly in the rewritten README.
+Correction, 2026-08-27: this record previously claimed the mark was an inherited "MH" monogram and it was replaced during the redesign. That was wrong. The claim came from a stale `alt="mh logo"` string in the forked footer, not from the artwork, which has always been a gK ligature. The original mark has been restored. **Alt text, filenames, and comments are not evidence about what an asset depicts — render it and look.**
+
+**Genuinely inherited, and correctly removed:**
+- the hand-signature SVG paths duplicated in `home.svelte` and `footer.svelte`
+- `README.md`, which described the site as `musabhassan.com` and credited Firebase hosting
+
+The original template's license (MPL 2.0) and authorship are credited in the rewritten README.
 
 **Standing visual preference, confirmed 2026-08-27.** Offered a direction round of committed visual worlds, the user took the standing exit and chose the **category standard, played straight** — the modern engineer portfolio executed at full craft rather than executed differently. This is a durable preference, not a one-off: future work on this site executes convention at full fidelity, without irony and without smuggling in quirk from a rejected direction.
 

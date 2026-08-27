@@ -1,8 +1,10 @@
 ---
 /**
- * GK monogram. Monoline, built from the same geometry as the page's grotesk:
- * one stroke weight, round joins, no ornament. Replaces the "MH" mark this
- * codebase inherited from the template it was forked from.
+ * The gK monogram — a lowercase g whose bowl interlocks with a K sharing its
+ * stem. This is Golam's own mark, carried forward from the previous version of
+ * the site unchanged. It is NOT inherited from the forked template: the footer
+ * there shipped a stale `alt="mh logo"` string that describes nothing in this
+ * artwork. Do not redraw it.
  */
 interface Props {
 	size?: number;
@@ -14,18 +16,14 @@ const { size = 24, class: className } = Astro.props;
 
 <svg
 	class={className}
-	width={(size * 38) / 24}
+	width={size}
 	height={size}
-	viewBox="0 0 38 24"
-	fill="none"
-	stroke="currentColor"
-	stroke-width="2"
-	stroke-linecap="round"
-	stroke-linejoin="round"
+	viewBox="0 0 500 500"
+	fill="currentColor"
 	role="img"
 	aria-label="Golam Kibria"
 >
-	<path d="M15.6 8.14A6 6 0 1 0 17 12h-4.4" />
-	<path d="M25 6v12" />
-	<path d="M31.2 6.8 25 12.4l6.4 5.8" />
+	<path
+		d="m457.88 42.51h-43.47l-0.99 1.08 0.82-1.59-117.03 123.86v-0.37l-32.22 33.99v0.47l-26.77 28.34v-0.56l-45.06 47.55q-1.96 2.67-4.18 5.12l-0.46 0.49q-2.89 3.1-6.18 5.8l-0.08 0.09v-0.03c-11.13 9.16-25.42 14.62-41.07 14.62-36.48 0-65.59-28.33-65.59-64.42 0-36.1 29.11-65.59 65.59-65.59 34.3 0 62.14 27.23 64.28 61.37l32.75-34.99v-50.44h-32.61v16.68c-16.68-15.52-39.58-24.83-64.42-24.83-53.95 0-98.19 43.85-98.19 97.8 0 53.94 44.24 97.41 98.19 97.41 24.84 0 47.74-9.31 64.42-25.23v50.46c0 36.48-28.71 65.59-64.42 65.59-36.09 0-65.59-29.11-65.59-65.59h-32.6c0.39 54.33 44.24 98.19 98.19 98.19 53.95 0 97.03-43.86 97.03-98.19v-84.35l26.77-26.54v83.33h32.22v-114.49l8.77-9.46 5.98-6.45 103.23 130.4h41.14l-122.25-154.46z"
+	/>
 </svg>
