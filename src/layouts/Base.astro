@@ -1,5 +1,8 @@
 ---
 import '../styles/global.css';
+// Vite resolves this to the emitted, hashed URL so the preload can never drift
+// from the file the stylesheet actually requests.
+import geistSans from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url';
 
 interface Props {
 	title: string;
@@ -20,6 +23,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonical} />
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="preload" as="font" type="font/woff2" href={geistSans} crossorigin />
 		<meta name="author" content="Golam Kibria" />
 		<meta name="theme-color" content="#0b0b0e" />
 		<meta
@@ -54,9 +58,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 
 		<script is:inline>
 			// Analytics is 160KB of JavaScript. Loaded normally it evaluates during
-			// first paint and costs ~600ms of blocking time on a mid-tier phone, so
-			// it waits for idle instead. Nothing is lost: gtag() queues into
-			// dataLayer immediately and the library drains the queue when it lands.
+			// first paint and cost ~600ms of the 800ms total blocking time on a
+			// mid-tier phone. It now waits for the visitor to act or leave (see
+			// below). Nothing is lost: gtag() queues into dataLayer immediately and
+			// the library drains the queue when it lands.
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
 				dataLayer.push(arguments);
@@ -74,16 +79,27 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 					s.src = 'https://www.googletagmanager.com/gtag/js?id=G-7XXPE0DV47';
 					document.head.appendChild(s);
 				}
-				function schedule() {
-					if ('requestIdleCallback' in window) requestIdleCallback(loadGA, { timeout: 3000 });
-					else setTimeout(loadGA, 2000);
+				// Two triggers, no timer. Either the visitor does something — which
+				// is the moment the session becomes worth measuring — or the
+				// session ends, which is the last moment it can be reported. A
+				// page open and untouched is a session that has not happened yet,
+				// so there is nothing to send and no reason to spend the visitor's
+				// main thread on 160KB of analytics.
+				var events = ['pointerdown', 'keydown', 'scroll', 'touchstart'];
+				function onFirstInput() {
+					events.forEach(function (e) {
+						window.removeEventListener(e, onFirstInput, true);
+					});
+					loadGA();
 				}
-				if (document.readyState === 'complete') schedule();
-				else window.addEventListener('load', schedule, { once: true });
-				// A visitor who leaves before idle still gets counted.
-				document.addEventListener('visibilitychange', function () {
-					if (document.visibilityState === 'hidden') loadGA();
+				events.forEach(function (e) {
+					window.addEventListener(e, onFirstInput, { capture: true, passive: true, once: true });
 				});
+				function onEnd() {
+					if (document.visibilityState === 'hidden') loadGA();
+				}
+				document.addEventListener('visibilitychange', onEnd);
+				window.addEventListener('pagehide', loadGA);
 			})();
 		</script>
 	</head>

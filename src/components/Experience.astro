@@ -14,7 +14,7 @@ import experience from '../data/experience.json';
 		<ol class="index">
 			{
 				experience.projects.map((project) => (
-					<li class="row plane plane--sunken">
+					<li class="row plane plane--sunken defer-paint">
 						<div class="row-head">
 							<h3>{project.title}</h3>
 							<p class="label">{project.type}</p>
@@ -51,6 +51,8 @@ import experience from '../data/experience.json';
 	   stacked arrangement as the highlight block that closes the section. */
 	.row {
 		padding: clamp(1.75rem, 3.5vw, 2.5rem);
+		/* Measured: 270-295px on a wide screen. */
+		contain-intrinsic-size: auto 280px;
 	}
 
 	.row-head {
@@ -91,6 +93,13 @@ import experience from '../data/experience.json';
 		line-height: 1.7;
 		max-width: 62ch;
 		margin-block-end: 1.25rem;
+	}
+
+	@media (max-width: 760px) {
+		.row {
+			/* Measured: 380-482px on a phone. */
+			contain-intrinsic-size: auto 440px;
+		}
 	}
 
 	@media (max-width: 560px) {

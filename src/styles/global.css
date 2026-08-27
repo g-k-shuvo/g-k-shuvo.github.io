@@ -164,6 +164,12 @@ h3 {
 	font-weight: 560;
 	line-height: 1.1;
 	letter-spacing: -0.025em;
+}
+
+/* Balancing is a slower line-breaking pass, so it is spent only on the two
+   short display lines where an orphan would actually show. */
+h1,
+h2 {
 	text-wrap: balance;
 }
 
@@ -185,15 +191,15 @@ h3 {
 	line-height: 1.35;
 }
 
-p {
-	text-wrap: pretty;
-}
-
 .lede {
 	font-size: clamp(1.0625rem, 1.6vw, 1.1875rem);
 	line-height: 1.6;
 	color: var(--ink-2);
 	max-width: var(--measure);
+	/* `pretty` on every paragraph on the page measured as real main-thread
+	   time. It is spent only on the opening claim, the one block a visitor
+	   reads closely. */
+	text-wrap: pretty;
 }
 
 /* Mono is for measurement: dates, counts, tabular data. Never for category
@@ -254,9 +260,14 @@ section {
 	/* Plain alpha, deliberately. `overlay` against a ground this dark returns
 	   ~2 x base x blend, which annihilates the noise however high the opacity
 	   reads — the value changes and the pixels do not. Judge this by measured
-	   variance on the ground, never by the opacity number. */
+	   variance on the ground, never by the opacity number.
+
+	   A raster tile, not feTurbulence: rasterising an SVG filter across the
+	   viewport was the largest single entry in the mobile main-thread
+	   breakdown. A 128px PNG tiles for free. */
 	opacity: 0.05;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+	background-image: url('/noise.png');
+	background-size: 128px 128px;
 }
 
 /* ---------------------------------------------------------------------------
@@ -327,21 +338,26 @@ section {
 	transition: background 0.5s var(--ease);
 }
 
-/* Surface wash where the light falls. */
-.plane::after {
-	content: '';
-	position: absolute;
-	inset: 0;
-	border-radius: inherit;
-	background: radial-gradient(
-		22rem circle at var(--lx) var(--ly),
-		rgba(255, 255, 255, 0.07),
-		transparent 72%
-	);
-	opacity: var(--lit);
-	pointer-events: none;
-	z-index: 3;
-	transition: opacity 0.45s var(--ease);
+/* Surface wash where the light falls. Only ever visible under a pointer, so it
+   is not painted at all without one: at opacity 0 the browser still rasterises
+   a 22rem radial gradient per plane, and across sixteen planes that dominated
+   the mobile main thread. */
+@media (hover: hover) and (pointer: fine) {
+	.plane::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		background: radial-gradient(
+			22rem circle at var(--lx) var(--ly),
+			rgba(255, 255, 255, 0.07),
+			transparent 72%
+		);
+		opacity: var(--lit);
+		pointer-events: none;
+		z-index: 3;
+		transition: opacity 0.45s var(--ease);
+	}
 }
 
 .plane > * {
@@ -459,4 +475,17 @@ section {
 	overflow: hidden;
 	clip-path: inset(50%);
 	white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------------------
+   Off-screen containment
+   The page is one long scroll: sixteen planes, seven images and every section
+   laid out at first paint. Letting the browser skip layout and paint for what
+   is not on screen is the single largest main-thread saving available, and it
+   costs nothing visually as long as each container declares a plausible
+   placeholder size so the scrollbar and CLS stay honest.
+--------------------------------------------------------------------------- */
+
+.defer-paint {
+	content-visibility: auto;
 }

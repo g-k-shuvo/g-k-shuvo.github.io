@@ -11,8 +11,13 @@ test('capture', async ({ page }, testInfo) => {
 	// Fonts settled and the status dot's breathe animation parked, so a capture
 	// measures layout rather than animation timing.
 	await page.evaluate(() => document.fonts.ready);
+	// Animation off so a capture measures layout, not timing. content-visibility
+	// off because Chrome does not paint skipped subtrees into a full-page
+	// screenshot — without this every deferred block photographs as an empty box.
 	await page.addStyleTag({
-		content: '*,*::before,*::after{animation:none !important;transition:none !important}'
+		content:
+			'*,*::before,*::after{animation:none !important;transition:none !important}' +
+			'*{content-visibility:visible !important}'
 	});
 	await page.waitForTimeout(400);
 

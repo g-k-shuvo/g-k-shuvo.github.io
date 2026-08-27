@@ -195,10 +195,14 @@ const shots = Object.entries(
 		border-radius: var(--radius);
 	}
 
-	/* The wash falls ON the photograph, not behind it. */
-	.portrait::after {
-		z-index: 5;
-		mix-blend-mode: soft-light;
+	/* The wash falls ON the photograph, not behind it. Pointer-only, like the
+	   wash itself — soft-light blending is not cheap and buys nothing on a
+	   device that can never trigger it. */
+	@media (hover: hover) and (pointer: fine) {
+		.portrait::after {
+			z-index: 5;
+			mix-blend-mode: soft-light;
+		}
 	}
 
 	/* Frames stack in one well so a cross-fade never moves layout. */
@@ -220,15 +224,21 @@ const shots = Object.entries(
 		/* The portrait sits in the page's greyscale, warmed just enough to stay human. */
 		filter: grayscale(0.5) contrast(1.05) brightness(1.02);
 		opacity: 0;
-		transition: opacity 1.4s var(--ease), filter 0.6s var(--ease);
+		transition: opacity 1.4s var(--ease);
 	}
 
 	.portrait :global(.shot.is-active) {
 		opacity: 1;
 	}
 
-	.portrait:hover :global(.shot) {
-		filter: grayscale(0) contrast(1.02) brightness(1);
+	@media (hover: hover) and (pointer: fine) {
+		.portrait :global(.shot) {
+			transition: opacity 1.4s var(--ease), filter 0.6s var(--ease);
+		}
+
+		.portrait:hover :global(.shot) {
+			filter: grayscale(0) contrast(1.02) brightness(1);
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

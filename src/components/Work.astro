@@ -27,7 +27,7 @@ const coverFor = (id: string) => covers[`../assets/work/${id}.jpg`]?.default;
 					const cover = coverFor(project.id);
 					const href = project.links[0]?.link;
 					return (
-						<li class="item plane">
+						<li class="item plane defer-paint">
 							<a href={href} target="_blank" rel="noreferrer">
 								{cover && (
 									<Image
@@ -62,6 +62,7 @@ const coverFor = (id: string) => covers[`../assets/work/${id}.jpg`]?.default;
 </section>
 
 <style>
+
 	.gallery {
 		list-style: none;
 		display: grid;
@@ -71,6 +72,8 @@ const coverFor = (id: string) => covers[`../assets/work/${id}.jpg`]?.default;
 
 	.item {
 		overflow: hidden;
+		/* Measured: 472-498px wide, 452-523px on a phone. */
+		contain-intrinsic-size: auto 490px;
 	}
 
 	.item a {
