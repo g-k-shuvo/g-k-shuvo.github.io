@@ -30,7 +30,7 @@ Success is a call booked or an inquiry sent. Not traffic, not time-on-page.
 
 ## Positioning
 
-**Full-stack range at genuine enterprise scale.** Golam has shipped across seven distinct enterprise domains — inventory and supply chain, healthcare analytics, environmental/industrial telemetry, data-center monitoring, safety and compliance, CX procurement, accessibility learning — and owns delivery end to end across frontend, backend, infrastructure, DevOps, and release cycles.
+**Full-stack range at genuine enterprise scale.** Golam has shipped across nine distinct enterprise domains — executive coaching intelligence, inventory and supply chain, fintech (SBA loan processing), CX procurement, environmental/industrial telemetry, data-center monitoring, accessibility learning, safety and compliance, healthcare analytics — and owns delivery end to end across frontend, backend, infrastructure, DevOps, and release cycles.
 
 The specific claim a neighboring portfolio cannot truthfully copy: **the breadth is real and it is domain breadth, not framework breadth.** Most portfolios at this level show one domain and many frameworks. This one shows many hard domains, each with production constraints (multi-tenancy, offline-first field ops, compliance-aware data handling, real-time sensor telemetry, ERP ingestion at 96K+ records), plus the stack range that delivering them required.
 
@@ -78,9 +78,11 @@ Bound at the same time:
 
 ## Evidence on Hand
 
-**Employment — real, verifiable:** Techjays. Software Engineer. May 2023 – Present. Menlo Park, CA. Remote.
+**Employment — real, verifiable:** Techjays. May 2023 – Present. Menlo Park, CA. Remote. Software Engineer I May 2023 – Jun 2025; promoted to Software Engineer II Jun 2025 – Present. Confirmed from the user's LinkedIn on 2026-10-20.
 
-**Seven enterprise projects delivered at Techjays**, with descriptions and stacks in `src/data/experience.json`. Named clients are not disclosed; the descriptions are domain-level and stay that way.
+**Eight enterprise projects delivered at Techjays**, plus a one-line healthcare analytics mention, grouped by role in `src/data/experience.json`. Wording follows the user's LinkedIn as of 2026-10-20. Clients are named and linked to their official sites, as the user approved on 2026-10-20 (matching their public LinkedIn): CEO Coaching International, Midalloy Specialty Materials, ArenaCX, Aquacycl, Edged, KiwiWrite, Ameya Health. The loan-processing POC and the safety & compliance system have no named client; do not add one.
+
+**Freelance — real:** Freelance Web Developer on Fiverr, Feb 2020 – May 2023, 18+ full-stack projects delivered. In `src/data/freelance.json`, from the user's LinkedIn.
 
 **Six personal / open-source projects** in `src/data/work.json`, each with a live public GitHub repository under `github.com/g-k-shuvo`: DocMind (RAG), Flairy (MERN marketplace), ArtifyNow (AI image SaaS), YouTube Offer Finder (browser extension), Bloggify (Django), React Video Corner (published npm package).
 
@@ -91,16 +93,16 @@ They ship, at the user's direction, but as **decorative cover art**: the `alt` a
 **Real photographs of Golam:** `src/assets/me/`. Every file there becomes a frame in the hero portrait, in filename order.
 
 **Education:** BSc in Computer Science & Engineering, Metropolitan University.
-**Certification:** Google Cloud Developer Certification, Google Cloud Platform.
+**Certifications:** Claude Certified Architect – Foundations, Anthropic. Google Cloud Certified Professional Cloud Developer, Google Cloud (Oct 2025, expires Oct 2027). Both link to their Credly badges from `src/data/stack.json`.
 
 **Availability, confirmed 2026-08-27:** open now, for both full-time remote roles and freelance/contract work. Lives in `src/data/site.json`; the value it replaced was 13 months stale, so check its age before trusting it again.
 
-**Absences that must not be fabricated:** no testimonials, no client names, no named references, no metrics beyond those already in the project descriptions, no awards, no press, no case studies, no résumé PDF on file, no pricing or engagement terms, no years-of-experience claim beyond May 2023 – present.
+**Absences that must not be fabricated:** no testimonials, no client names beyond the seven listed above, no named references, no metrics beyond those already in the project descriptions, no awards, no press, no case studies, no résumé PDF on file, no pricing or engagement terms, no years-of-experience claim beyond Feb 2020 – present (freelance from Feb 2020, Techjays from May 2023).
 
 ## Product Principles
 
 1. **Legibility beats atmosphere.** A hiring manager skimming for forty seconds must be able to extract role, range, and proof without scrolling patiently. Anything that delays that information loses.
-2. **Breadth is the argument; show it as evidence, not adjectives.** Seven domains and their real production constraints do the persuading. Never substitute a self-description for the work.
+2. **Breadth is the argument; show it as evidence, not adjectives.** Nine domains and their real production constraints do the persuading. Never substitute a self-description for the work.
 3. **Weight is a feature.** Minimal, fast, and quiet is a user requirement. Every dependency, animation, and asset must justify its cost against the forty-second skim.
 4. **Only true things.** Every claim traces to `experience-data.json`, `work-data.json`, a live GitHub repo, or a confirmed fact above. No invented proof, no borrowed identity.
 5. **Own the identity.** Every mark, signature and credit on the finished site is Golam's own. Nothing stands in that was carried over from an earlier template.

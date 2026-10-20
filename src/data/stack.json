@@ -33,8 +33,14 @@
 			"issuer": "Metropolitan University"
 		},
 		{
-			"title": "Google Cloud Developer Certification",
-			"issuer": "Google Cloud Platform"
+			"title": "Claude Certified Architect – Foundations",
+			"issuer": "Anthropic",
+			"url": "https://www.credly.com/badges/43af0542-3007-497a-96e7-73ee7f7173a3/public_url"
+		},
+		{
+			"title": "Google Cloud Certified Professional Cloud Developer",
+			"issuer": "Google Cloud",
+			"url": "https://www.credly.com/badges/59c3acb7-58e9-43ee-80f9-73f8eb3517d2/public_url"
 		}
 	]
 }

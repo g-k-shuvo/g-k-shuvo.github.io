@@ -1,0 +1,13 @@
+{
+    "role": "Freelance Web Developer",
+    "platform": "Fiverr",
+    "type": "Freelance",
+    "duration": "Feb 2020 – May 2023",
+    "summary": "Delivered 18+ full-stack projects end to end for small businesses and startups — scoping, architecture, build, deployment, and post-launch support.",
+    "points": [
+        "Built applications with React, Node.js, Django, PostgreSQL, MongoDB, and MySQL.",
+        "Deployed and maintained on AWS and DigitalOcean.",
+        "Worked directly with non-technical founders, translating business goals into shipped software and supporting long-term returning clients."
+    ],
+    "techStack": ["React", "Node.js", "Django", "PostgreSQL", "MongoDB", "MySQL", "AWS", "DigitalOcean"]
+}

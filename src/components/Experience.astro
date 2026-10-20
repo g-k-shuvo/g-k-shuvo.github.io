@@ -5,30 +5,62 @@ import experience from '../data/experience.json';
 <section id="experience">
 	<div class="shell">
 		<div class="section-head">
-			<h2>{experience.role} at {experience.company}</h2>
+			<h2>{experience.company}</h2>
 			<p class="meta">
 				{experience.location} &middot; {experience.workMode} &middot; {experience.duration}
 			</p>
 		</div>
 
-		<ol class="index">
-			{
-				experience.projects.map((project) => (
-					<li class="row plane plane--sunken defer-paint">
-						<div class="row-head">
-							<h3>{project.title}</h3>
-							<p class="label">{project.type}</p>
-						</div>
-						<p class="row-body">{project.description}</p>
-						<ul class="tags">
-							{project.techStack.map((tech) => (
-								<li class="tag">{tech}</li>
-							))}
-						</ul>
-					</li>
-				))
-			}
-		</ol>
+		{
+			experience.roles.map((role) => (
+				<div class="role">
+					<div class="role-head">
+						<h3>{role.title}</h3>
+						<p class="meta">{role.duration}</p>
+					</div>
+					<p class="role-summary">{role.summary}</p>
+
+					<ol class="index">
+						{role.projects.map((project) => (
+							<li class="row plane plane--sunken defer-paint">
+								<div class="row-head">
+									<div class="row-id">
+										<h4>{project.title}</h4>
+										{'client' in project && project.client && (
+											<p class="client">
+												for{' '}
+												<a href={project.client.url} target="_blank" rel="noreferrer">
+													{project.client.name}
+													<span class="sr-only"> (opens in a new tab)</span>
+												</a>
+											</p>
+										)}
+									</div>
+									<p class="label">{project.type}</p>
+								</div>
+								<p class="row-body">{project.description}</p>
+								<ul class="tags">
+									{project.techStack.map((tech) => (
+										<li class="tag">{tech}</li>
+									))}
+								</ul>
+							</li>
+						))}
+					</ol>
+
+					{'also' in role && role.also && (
+						<p class="role-also">
+							Also: {role.also.title.toLowerCase()} for{' '}
+							<a href={role.also.client.url} target="_blank" rel="noreferrer">
+								{role.also.client.name}
+								<span class="sr-only"> (opens in a new tab)</span>
+							</a>
+							{' '}— {role.also.description}
+						</p>
+					)}
+				</div>
+			))
+		}
 
 		<aside class="highlight plane plane--sunken">
 			<h3>{experience.highlight.title}</h3>
@@ -41,6 +73,43 @@ import experience from '../data/experience.json';
 </section>
 
 <style>
+	/* Each role opens like a section in miniature: title and dates on one
+	   baseline, a one-line summary, then its projects. */
+	.role + .role {
+		margin-block-start: 4.5rem;
+	}
+
+	.role-head {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.25rem 1.5rem;
+		margin-block-end: 0.75rem;
+	}
+
+	.role-head h3 {
+		color: var(--ink);
+		font-size: 1.375rem;
+	}
+
+	.role-summary,
+	.role-also {
+		color: var(--ink-2);
+		font-size: 0.9375rem;
+		line-height: 1.7;
+		max-width: 62ch;
+	}
+
+	.role-summary {
+		margin-block-end: 1.75rem;
+	}
+
+	.role-also {
+		margin-block-start: 1.25rem;
+		color: var(--ink-3);
+	}
+
 	.index {
 		list-style: none;
 		display: grid;
@@ -64,9 +133,22 @@ import experience from '../data/experience.json';
 		margin-block-end: 0.875rem;
 	}
 
-	.row-head h3 {
+	.row-head h4 {
 		color: var(--ink);
 		font-size: 1.1875rem;
+	}
+
+	.client {
+		margin-block-start: 0.25rem;
+		color: var(--ink-3);
+		font-size: 0.875rem;
+	}
+
+	/* Underlined at rest: the client name is the one link in the row. */
+	.client a,
+	.role-also a {
+		color: var(--ink-2);
+		text-decoration-line: underline;
 	}
 
 	.row-body {
@@ -104,6 +186,7 @@ import experience from '../data/experience.json';
 
 	@media (max-width: 560px) {
 		/* The type label drops under the title rather than squeezing beside it. */
+		.role-head,
 		.row-head {
 			flex-direction: column;
 			gap: 0.25rem;

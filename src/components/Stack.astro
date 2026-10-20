@@ -32,7 +32,14 @@ import stack from '../data/stack.json';
 				{
 					stack.education.map((entry) => (
 						<li>
-							<span class="title">{entry.title}</span>
+							{'url' in entry ? (
+								<a class="title" href={entry.url} target="_blank" rel="noreferrer">
+									{entry.title}
+									<span class="sr-only"> (verify credential, opens in a new tab)</span>
+								</a>
+							) : (
+								<span class="title">{entry.title}</span>
+							)}
 							<span class="meta">{entry.issuer}</span>
 						</li>
 					))
@@ -110,6 +117,11 @@ import stack from '../data/stack.json';
 	.education .title {
 		font-size: 0.9375rem;
 		color: var(--ink);
+	}
+
+	/* Underlined at rest so a verifiable credential reads as one. */
+	.education a.title {
+		text-decoration-line: underline;
 	}
 
 	@media (max-width: 760px) {

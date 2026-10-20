@@ -1,58 +1,91 @@
 {
     "company": "Techjays",
-    "role": "Software Engineer",
     "duration": "May 2023 – Present",
     "location": "Menlo Park, CA",
     "workMode": "Remote",
-    "projects": [
+    "roles": [
         {
-            "id": "ai-inventory-management",
-            "title": "AI Inventory Management Platform",
-            "type": "Web App",
-            "description": "End-to-end AI-driven inventory management platform for a US-based distributor managing 1,200+ SKUs across multiple warehouses. Architected microservices backend with multi-tenancy, Azure AD SSO, real-time dashboards, ERP data ingestion processing 96K+ records, and ML-based demand forecasting with automated reorder recommendations.",
-            "techStack": ["Django", "React", "PostgreSQL", "GCP", "Azure AD", "Data Pipelines", "ML"]
+            "id": "se-2",
+            "title": "Software Engineer II",
+            "duration": "Jun 2025 – Present",
+            "summary": "Promoted to Software Engineer II in June 2025. I own end-to-end delivery of full-stack and AI systems for US enterprise clients in supply chain, fintech, compliance, and healthcare.",
+            "projects": [
+                {
+                    "id": "ai-coaching-intelligence",
+                    "title": "AI Coaching Intelligence Platform",
+                    "type": "AI Platform",
+                    "client": { "name": "CEO Coaching International", "url": "https://ceocoachinginternational.com" },
+                    "description": "Built an AI platform that turns recorded coaching sessions into prep briefs, follow-ups and client insights. Engineered an event-driven intake pipeline (Read.ai → Pub/Sub → Temporal) with LLM meeting classification and a review queue for ambiguous cases, plus Salesforce sync, Microsoft SSO with account-scoped RBAC, and an audited RAG document hub (Claude/Gemini on Vertex AI).",
+                    "techStack": ["Django", "React", "TypeScript", "PostgreSQL", "pgvector", "Temporal", "GCP"]
+                },
+                {
+                    "id": "ai-inventory-management",
+                    "title": "AI Inventory Management Platform",
+                    "type": "AI Platform",
+                    "client": { "name": "Midalloy Specialty Materials", "url": "https://www.midalloy.com" },
+                    "description": "Built an AI-driven platform tracking stock across multiple warehouses for a US distributor. Architected multi-tenant microservices with Azure AD SSO; engineered an ERP sync pipeline with bulk upserts that significantly cut sync time; shipped ML demand forecasting with automated reorder recommendations.",
+                    "techStack": ["Django", "React", "PostgreSQL", "Redis", "GCP", "Azure AD"]
+                },
+                {
+                    "id": "agentic-loan-processing",
+                    "title": "Agentic Loan Processing POC",
+                    "type": "Agentic AI POC",
+                    "description": "Architected an event-driven multi-agent system for SBA loan processing: a wide range of loan documents classified and extracted via LLM tool-use loops with parallel agent runs, an auditor agent cross-matching documents, and a human-in-the-loop review dashboard. Client approved it for full build-out.",
+                    "techStack": ["FastAPI", "Kafka", "Anthropic API", "OpenAI API", "pgvector", "Next.js"]
+                },
+                {
+                    "id": "enterprise-cx-marketplace",
+                    "title": "Enterprise CX Marketplace",
+                    "type": "Web Platform",
+                    "client": { "name": "ArenaCX", "url": "https://arenacx.com" },
+                    "description": "Replaced a licensed procurement tool with an in-house white-label platform, eliminating licensing spend. Made vendor RFP responses real-time, replacing scheduled polling with native in-app submission, and re-engineered vendor filtering for near-instant search. Owned frontend, backend, AWS infra, and releases.",
+                    "techStack": ["Vue", "AWS Lambda", "Cognito", "PostgreSQL"]
+                }
+            ]
         },
         {
-            "id": "enterprise-cx-marketplace",
-            "title": "Enterprise CX Marketplace",
-            "type": "Web App",
-            "description": "Enterprise platform for vendor discovery, RFP lifecycle, and procurement automation. Replaced third-party Prokuria with a fully in-house white-label solution, reducing dependency, cost, and latency. Owned end-to-end delivery across frontend, backend, and AWS infrastructure including testing, DevOps, and release cycles.",
-            "techStack": ["Vue", "AWS Lambda", "Cognito", "S3", "EC2", "Amplify", "Docker", "PostgreSQL"]
-        },
-        {
-            "id": "environmental-tech",
-            "title": "Environmental Tech Portal",
-            "type": "Web App",
-            "description": "Secure web portal for industrial wastewater treatment systems, supporting decentralized treatment plants and bioreactor monitoring. Built dashboards for real-time sensor telemetry, hydraulic flow, voltage signals, and BOD analysis with access control and compliance-aware data handling.",
-            "techStack": ["React", "Chart.js", "MUI", "Redux", "AWS", "Django", "Snowflake", "PostgreSQL"]
-        },
-        {
-            "id": "safety-compliance",
-            "title": "Safety & Compliance Management System",
-            "type": "Cross-Platform",
-            "description": "End-to-end safety and compliance solutions with offline-first architecture using AWS Datastore, DynamoDB, and GraphQL for field operations. Enhanced inspection workflows, streamlined incident reporting, enforced role-based access controls, and built analytics dashboards for compliance metrics and operational efficiency.",
-            "techStack": ["React", "React Native", "GraphQL", "DynamoDB", "AWS Amplify"]
-        },
-        {
-            "id": "data-center-monitoring",
-            "title": "AI-Ready Data Center Monitoring Portal",
-            "type": "Web App",
-            "description": "Real-time monitoring portal for AI-focused, waterless-cooled data centers supporting next-gen compute infrastructure. Built dashboards for system telemetry, thermal efficiency, and operational performance with custom visualizations for infrastructure metrics, energy efficiency, cooling performance, and hardware utilization.",
-            "techStack": ["React", ".NET", "Azure", "AntD Charts", "Data Visualization"]
-        },
-        {
-            "id": "accessibility-learning",
-            "title": "Accessibility Learning Platform",
-            "type": "Web App",
-            "description": "Full-stack platform for assistive learning and digital math expression for students with dysgraphia and motor impairments. Developed interactive math-input interfaces and accessibility-focused UI components, deployed with Jenkins, AWS, and NGINX for scalable delivery.",
-            "techStack": ["Angular", "Node.js", "AWS", "Jenkins", "NGINX"]
-        },
-        {
-            "id": "healthcare-analytics",
-            "title": "Healthcare Analytics & Provider Platform",
-            "type": "Web App",
-            "description": "Provider-facing platform with multi-role access and organization management. Integrated wearable data from Garmin and Fitbit for heart rate, sleep, stress, and activity monitoring. Built dashboards for patient monitoring, cohort analysis, population health, and ML-based nutrition insights.",
-            "techStack": ["React", "REST APIs", "Django", "PostgreSQL", "Docker", "ML", "GCP"]
+            "id": "se-1",
+            "title": "Software Engineer I",
+            "duration": "May 2023 – Jun 2025",
+            "summary": "Full-stack development on client products across edtech, data infrastructure, environmental engineering, and healthcare.",
+            "projects": [
+                {
+                    "id": "environmental-telemetry",
+                    "title": "Environmental Telemetry Portal",
+                    "type": "Data Portal",
+                    "client": { "name": "Aquacycl", "url": "https://aquacycl.com" },
+                    "description": "Architected a portal for industrial wastewater treatment systems across multiple sites: Snowflake data ingestion, role-based authorization, automated user provisioning, and visualization of hydraulic state, sensor outputs, and BOD analysis under strict data-sensitivity requirements.",
+                    "techStack": ["React", "Snowflake", "Grafana"]
+                },
+                {
+                    "id": "data-center-monitoring",
+                    "title": "Data Center Monitoring Portal",
+                    "type": "Monitoring Portal",
+                    "client": { "name": "Edged", "url": "https://edged.us" },
+                    "description": "Built the frontend for a monitoring portal supporting waterless-cooled AI data centers in the US: real-time operational dashboards, system-state visualization, Microsoft authentication, and Azure Static Web Apps deployment.",
+                    "techStack": ["React", "AntD Charts", "Azure"]
+                },
+                {
+                    "id": "accessibility-learning",
+                    "title": "Accessibility & Learning Platform",
+                    "type": "Edtech Web App",
+                    "client": { "name": "KiwiWrite", "url": "https://www.kiwiwrite.com" },
+                    "description": "Built interactive math-input interfaces enabling students with motor and dysgraphia challenges to write math digitally; owned deployment via Jenkins, AWS, and NGINX, and worked directly with the client on requirements and iteration.",
+                    "techStack": ["Angular", "Node.js", "AWS", "Jenkins", "NGINX"]
+                },
+                {
+                    "id": "safety-compliance",
+                    "title": "Safety & Compliance Management System",
+                    "type": "Web + Mobile App",
+                    "description": "Built a dual-app system (admin portal + offline-first field app) for field teams on no-network industrial sites, with automatic conflict-resolution sync, RBAC, and audit trails.",
+                    "techStack": ["React", "React Native", "GraphQL", "AWS Amplify"]
+                }
+            ],
+            "also": {
+                "title": "Healthcare analytics platform",
+                "client": { "name": "Ameya Health", "url": "https://ameyahealth.com" },
+                "description": "Garmin/Fitbit integrations and ML nutrition insights (FastAPI, GCP)."
+            }
         }
     ],
     "highlight": {
